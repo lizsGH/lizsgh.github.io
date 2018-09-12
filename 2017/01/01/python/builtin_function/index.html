@@ -1,0 +1,150 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="www.lizs.cc"><meta name="keywords" content="lizs, www.lizs.cc, lizs.cc"><title>Python - Built-in functions - lizs</title><!-- link(rel="stylesheet", type="text/css", href="//fonts.neworld.org/css?family=Source+Code+Pro")--><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><!-- #header--><div id="layout" class="layout-g"><div class="layout-r"><div id="sidebar"><div class="site-name"><h1 class="title"><a href="/." class="home">lizs</a></h1><!-- h1.hidden= current_title--><!-- a#logo(href=url_for('.'))= config.title--><p class="description">www.lizs.cc</p></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="www.lizs.cc"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="time">{date}</div><div class="title">{title}</div><!-- .tags {tags}--></a></div></template></div></div><!-- .search-pla--><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#overview"><span class="toc-text">overview</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#abs-x"><span class="toc-text">abs(x)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#all-iterable"><span class="toc-text">all(iterable)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#any-iterable"><span class="toc-text">any(iterable)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ascii-object"><span class="toc-text">ascii(object)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bin-x"><span class="toc-text">bin(x)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bool-x"><span class="toc-text">bool([x])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#breakpoint-args-kws"><span class="toc-text">breakpoint(*args, **kws)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bytearray-source-encoding-errors"><span class="toc-text">bytearray([source[, encoding[, errors]]])</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#map-function-iterable-iterable"><span class="toc-text">map(function, iterable[, iterable, ..])</span></a></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 近期文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/01/http/basic_http_authorization/">HTTP - Basic Authentication</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/linux/cmd_find/">linux command - find</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/others/terminal_shortcut/">Terminal - shortcut</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/tcp/3-handshake_and_4-waves/">TCP/IP - TCP 三次握手连接和四次握手关闭</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/algorithm/basic/">Algorithm - Basic</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/hello-world/">Hello World</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP/IP</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/other/" style="font-size: 15px;">other</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/tcp-ip/" style="font-size: 15px;">tcp/ip</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li></ul></div><div id="nav-menu"></div></div></div><div class="layout-l"><div class="content_container"><div class="post"><div class="header"><h1 class="post-title">Python - Built-in functions</h1><div class="post-meta"><p><span class="date">2017-01-01</span><span><a href="/categories/Python/" class="category">Python</a></span><span class="view_count"><i id="busuanzi_container_page_pv"><!-- i=  __('hits') + '数: '--><i id="busuanzi_value_page_pv"></i></i></span></p></div></div><div class="post-content"><h1 id="overview"><a href="#overview" class="headerlink" title="overview"></a>overview</h1><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>Built-in Functions</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abs()</td>
+<td>delattr()</td>
+<td>hash()</td>
+<td>memoryview()</td>
+<td>set()</td>
+</tr>
+<tr>
+<td>all()</td>
+<td>dict()</td>
+<td>help()</td>
+<td>min()</td>
+<td>setattr()</td>
+</tr>
+<tr>
+<td>any()</td>
+<td>dir()</td>
+<td>hex()</td>
+<td>next()</td>
+<td>slice()</td>
+</tr>
+<tr>
+<td>ascii()</td>
+<td>divmod()</td>
+<td>id()</td>
+<td>object()</td>
+<td>sorted()</td>
+</tr>
+<tr>
+<td>bin()</td>
+<td>enumerate()</td>
+<td>input()</td>
+<td>oct()</td>
+<td>staticmethod()</td>
+</tr>
+<tr>
+<td>bool()</td>
+<td>eval()</td>
+<td>int()</td>
+<td>open()</td>
+<td>str()</td>
+</tr>
+<tr>
+<td>breakpoint()</td>
+<td>exec()</td>
+<td>isinstance()</td>
+<td>ord()</td>
+<td>sum()</td>
+</tr>
+<tr>
+<td>bytearray()</td>
+<td>filter()</td>
+<td>issubclass()</td>
+<td>pow()</td>
+<td>super()</td>
+</tr>
+<tr>
+<td>bytes()</td>
+<td>float()</td>
+<td>iter()</td>
+<td>print()</td>
+<td>tuple()</td>
+</tr>
+<tr>
+<td>callable()</td>
+<td>format()</td>
+<td>len()</td>
+<td>property()</td>
+<td>type()</td>
+</tr>
+<tr>
+<td>chr()</td>
+<td>frozenset()</td>
+<td>list()</td>
+<td>range()</td>
+<td>vars()</td>
+</tr>
+<tr>
+<td>classmethod()</td>
+<td>getattr()</td>
+<td>locals()</td>
+<td>repr()</td>
+<td>zip()</td>
+</tr>
+<tr>
+<td>compile()</td>
+<td>globals()</td>
+<td>map()</td>
+<td>reversed()</td>
+<td>__import__()</td>
+</tr>
+<tr>
+<td>complex()</td>
+<td>hasattr()</td>
+<td>max()</td>
+<td>round()</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="abs-x"><a href="#abs-x" class="headerlink" title="abs(x)"></a>abs(x)</h2><p>返回数值<code>x</code>的绝对值，<code>x</code>可以为：整数和浮点数。如果<code>x</code>是复数，则返回复数的 magnitude，即复数与其共轭复数乘积的正平方根。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">abs(2 + 2j)  # (2 + 2j) * (2 - 2j) 的平方根</span><br><span class="line">2.8284271247461903</span><br></pre></td></tr></table></figure></p>
+<p>复数与其共轭复数的乘积运算： <code>(a + bj) * (a - bj) == a ** 2 + b ** 2</code>，因此，<code>abs(a + bj) == math.sqrt(a ** 2 + b ** 2)</code> </p>
+<hr>
+<h2 id="all-iterable"><a href="#all-iterable" class="headerlink" title="all(iterable)"></a>all(iterable)</h2><p>当<code>iterable</code>中的所有元素为真，或<code>iterable</code>为空时，返回<code>True</code>。</p>
+<hr>
+<h2 id="any-iterable"><a href="#any-iterable" class="headerlink" title="any(iterable)"></a>any(iterable)</h2><p>当<code>iterable</code>中有任意一个元素为真时，返回<code>True</code>。</p>
+<hr>
+<h2 id="ascii-object"><a href="#ascii-object" class="headerlink" title="ascii(object)"></a>ascii(object)</h2><p>As <code>repr()</code>, return a string containing a printable representation of an object, but escape the non-ASCII characters in the string returned by <code>repr()</code> using <code>\x</code>, <code>\u</code> or <code>\U</code> escapes. This generates a string similar to that returned by <code>repr()</code> in Python 2.</p>
+<hr>
+<h2 id="bin-x"><a href="#bin-x" class="headerlink" title="bin(x)"></a>bin(x)</h2><p>将整数<code>x</code>转换为以<code>0b</code>开头的二进制字符串。<code>x</code>为整数或int对象(即该对象必须定义<code>__index__()</code>方法，并返回一个整数)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = bin(3)  # &apos;0b11&apos;</span><br><span class="line">b = bin(-3)  # &apos;-0b11&apos;</span><br><span class="line">int(b, base=2)</span><br><span class="line">-3</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="bool-x"><a href="#bool-x" class="headerlink" title="bool([x])"></a>bool([x])</h2><p>根据<code>x</code>的判断值，返回布尔值<code>True</code>或<code>False</code>。如果<code>x</code>为空，返回<code>False</code>。</p>
+<p><code>bool</code>是<code>int</code>的子类，但是，<code>bool</code>不能够被继承，因为<code>bool</code>的实例只有<code>True</code>和<code>False</code>。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class A(bool):</span><br><span class="line">    pass</span><br><span class="line">    </span><br><span class="line">TypeError: type &apos;bool&apos; is not an acceptable base type</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="breakpoint-args-kws"><a href="#breakpoint-args-kws" class="headerlink" title="breakpoint(*args, **kws)"></a>breakpoint(*args, **kws)</h2><blockquote>
+<p>New in version 3.7</p>
+</blockquote>
+<hr>
+<h2 id="bytearray-source-encoding-errors"><a href="#bytearray-source-encoding-errors" class="headerlink" title="bytearray([source[, encoding[, errors]]])"></a>bytearray([source[, encoding[, errors]]])</h2><hr>
+<h2 id="map-function-iterable-iterable"><a href="#map-function-iterable-iterable" class="headerlink" title="map(function, iterable[, iterable, ..])"></a>map(function, iterable[, iterable, ..])</h2><blockquote>
+<p>(Python2.7) Apply <code>function</code> to every item of <code>iterable</code> and return a list of the results. If additional <code>iterable</code> arguments are passed, <code>function</code> must take that many arguments and is applied to the items from all iterables in parallel. If one iterable is shorter than another it is assumed to be extended with <code>None</code> items. If <code>function</code> is <code>None</code>, the identity function is assumed; if there are multiple arguments, <code>map()</code> returns a list consisting of tuples containing the corresponding items from all iterables (a kind of transpose operation). The <code>iterable</code> arguments may be a sequence or any iterable object; the result is always a list.<br>(Python3+) Return an iterator that applies <code>function</code> to every item of <code>iterable</code>, yielding the results. If additional <code>iterable</code> arguments are passed, <code>function</code> must take that many arguments and is applied to the items from all iterables in parallel. With multiple iterables, the iterable stops when the shortest iterable is exhausted.</p>
+</blockquote>
+<ul>
+<li><p>将<code>function</code>应用于<code>iterable</code>的每一项，返回列表(Python3+，迭代对象)，列表(迭代对象)中的每一项都是<code>function</code>作用后的结果。<strong>注意：Python3+ 返回的是迭代对象。</strong></p>
+</li>
+<li><p>如果有多个<code>iterable</code>，<code>function</code>将并行应用于<code>iterable</code>的每一项。也即是，所有<code>iterable</code>中相同序列的项同时作为参数传递给<code>function</code>运行。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">map(lambda x, y: x + y, [1, 2, 3], [4, 5, 6])</span><br><span class="line">[5, 7, 9]  # Python3+ 返回迭代器&lt;map object&gt;</span><br><span class="line">map(lambda x: x * x, [1, 2, 3], [4, 5, 6])</span><br><span class="line">TypeError: &lt;lambda&gt;() takes exactly 1 argument (2 given)</span><br><span class="line">def func(*args):</span><br><span class="line">    return args</span><br><span class="line">map(func, [1, 2, 3], [4, 5, 6], [7, 8, 9])</span><br><span class="line">[(1, 4, 7), (2, 5, 8), (3, 6, 9)]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当<code>iterable</code>的个数(注意，不是<code>iterable</code>元素个数)与<code>function</code>函数的参数不一致时会出错。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map(lambda x: x * x, [1, 2, 3], [4, 5, 6])</span><br><span class="line">TypeError: &lt;lambda&gt;() takes exactly 1 argument (2 given)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当有多个<code>iterable</code>并且<code>iterable</code>的元素数目不一致时：Python2，会以最长的为准，短自动用<code>None</code>补全。Python3+，以最短的为准，迭代完最短的<code>iterable</code>就会自动结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def func(*args):</span><br><span class="line">    return args</span><br><span class="line"># Python2.7</span><br><span class="line">map(func, [1, 2, 3], [4, 5, 6, 7])</span><br><span class="line">[(1, 4), (2, 5), (3, 6), (None, 7)]</span><br><span class="line"># Python3+</span><br><span class="line">list(map(func, [1, 2, 3], [4, 5, 6, 7]))</span><br><span class="line">[(1, 4), (2, 5), (3, 6)]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>当<code>function</code>为<code>None</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Python2</span><br><span class="line">map(None, [1, 2, 3], [4, 5, 6, 7])</span><br><span class="line">[(1, 4), (2, 5), (3, 6), (None, 7)]</span><br><span class="line"># Python3+</span><br><span class="line">list(map(None, [1, 2, 3], [4, 5, 6, 7]))</span><br><span class="line">TypeError: &apos;NoneType&apos; object is not callable</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</div><div class="tags"><a href="/tags/python/">python</a><a href="/tags/tutorial/">tutorial</a></div><div class="post-nav"><a href="/2017/01/01/hello-world/" class="pre">Hello World</a><a href="/2017/01/01/others/lizsgh.github.io/" class="next">lizsgh.github.io</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>
