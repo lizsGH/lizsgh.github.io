@@ -190,10 +190,9 @@ body {
   background: #e5e5e5;
 }
 .layout-g {
+  overflow: hidden;
   letter-spacing: -0.31em;
-  *letter-spacing: normal;
   word-spacing: -0.43em;
-  *word-spacing: -0.43em;
   text-rendering: optimizespeed;
   display: -webkit-flex;
   -webkit-flex-flow: row wrap;

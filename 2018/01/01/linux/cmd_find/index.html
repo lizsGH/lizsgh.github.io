@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="www.lizs.cc"><meta name="keywords" content="lizs, www.lizs.cc, lizs.cc"><title>linux command - find - lizs</title><!-- link(rel="stylesheet", type="text/css", href="//fonts.neworld.org/css?family=Source+Code+Pro")--><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><!-- #header--><div id="layout" class="layout-g"><div class="layout-r"><div id="sidebar"><div class="site-name"><h1 class="title"><a href="/." class="home">lizs</a></h1><!-- h1.hidden= current_title--><!-- a#logo(href=url_for('.'))= config.title--><p class="description">www.lizs.cc</p></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="www.lizs.cc"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="time">{date}</div><div class="title">{title}</div><!-- .tags {tags}--></a></div></template></div></div><!-- .search-pla--><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#find"><span class="toc-text">find</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#H-L-P"><span class="toc-text">-H, -L, -P</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-debugopts-Olevel"><span class="toc-text">-D debugopts, -Olevel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#starting-point"><span class="toc-text">starting-point</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#expression"><span class="toc-text">expression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tests"><span class="toc-text">tests</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#actions"><span class="toc-text">actions</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#operators"><span class="toc-text">operators</span></a></li></ol></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 近期文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/02/01/http/basic_http_authorization/">HTTP - Basic Authentication</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/01/linux/cmd_find/">linux command - find</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/algorithm/basic/">Algorithm - Basic</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/01/others/lizsgh.github.io/">lizsgh.github.io</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux-cmd/">Linux - cmd</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Other/">Other</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/other/">other</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/other/" style="font-size: 15px;">other</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li></ul></div><div id="nav-menu"></div></div></div><div class="layout-l"><div class="content_container"><div class="post"><div class="header"><h1 class="post-title">linux command - find</h1><div class="post-meta"><p><span class="date">2018-01-01</span><span><a href="/categories/Linux-cmd/" class="category">Linux - cmd</a></span><span class="view_count"><i id="busuanzi_container_page_pv"><!-- i=  __('hits') + '数: '--><i id="busuanzi_value_page_pv"></i></i></span></p></div></div><div class="post-content"><h1 id="find"><a href="#find" class="headerlink" title="find"></a>find</h1><p>search for files in a directory hierarchy</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find [-H] [-L] [-P] [-D debugopts] [-Olevel] [starting-point...] [expression]</span><br></pre></td></tr></table></figure>
+<h2 id="H-L-P"><a href="#H-L-P" class="headerlink" title="-H, -L, -P"></a>-H, -L, -P</h2><p>选项 <code>-H</code>, <code>-L</code>, <code>-P</code> 用来控制软连接的处理。</p>
+<ul>
+<li><strong>-H</strong>: 默认行为，不搜索软连接下的目录或文件。</li>
+<li><strong>-L</strong>: 搜索软链接。</li>
+<li><strong>-P</strong>: 不搜索软链接下的目录或文件，除非</li>
+</ul>
+<p><strong>当没有指定 <code>-H</code>, <code>-L</code>, <code>-P</code>时，<code>-H</code> 是默认行为，即不搜索软链接下的目录和文件。同时指定多个选项，最后一个有效。如：<code>find -H -L .</code>，<code>-H</code> 无效，<code>-L</code> 有效。</strong></p>
+<h2 id="D-debugopts-Olevel"><a href="#D-debugopts-Olevel" class="headerlink" title="-D debugopts, -Olevel"></a>-D debugopts, -Olevel</h2><ul>
+<li><strong>-D debugopts</strong>: 打印诊断信息</li>
+<li><strong>-Olevel</strong>: 允许查询优化，<code>level</code>: 0, 1, 2, 3</li>
+</ul>
+<h2 id="starting-point"><a href="#starting-point" class="headerlink" title="starting-point"></a>starting-point</h2><p>查询开始路径，默认为当前目录 <code>.</code>。</p>
+<h2 id="expression"><a href="#expression" class="headerlink" title="expression"></a>expression</h2><p>expression 表达式可以由以下部分组成：<strong>tests</strong>, <strong>actions</strong>, <strong>global options</strong>, <strong>positional options</strong>, <strong>operators</strong>。</p>
+<h3 id="tests"><a href="#tests" class="headerlink" title="tests"></a>tests</h3><ul>
+<li><p><strong>-name pattern</strong><br>按目录名或文件名查找。<code>pattern</code> 不能够有 <code>/</code>，否则无效，如：<code>-name a/b</code> 无效。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">find -name &quot;apps.py&quot;  # 查找当前目录下的 apps.py 文件</span><br><span class="line">find -name &quot;apps&quot;  # 查找当前目录下名称为 apps 的文件或目录</span><br><span class="line">find /home -name &quot;app*&quot;  # 查找 /home 目录下名称匹配 app* 的文件或目录</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>-iname pattern</strong><br>iname(insensitive name). 用法同 <code>-name</code>，只是 <code>pattern</code> 对大小写不敏感。</p>
+</li>
+<li><p><strong>-path pattern</strong><br>按路径查找。<code>pattern</code> 是路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find -path &quot;apps&quot;  # 无结果，因为 apps 不是路径</span><br><span class="line">find -path &quot;./apps&quot;  # 查找当前目录下的 apps 目录或文件</span><br><span class="line">find -path &quot;./apps*&quot;  # 查找当前目录下路径以 apps 开头的目录或文件</span><br><span class="line">find /home -path &quot;*apps*&quot;  # 在 /home 目录下查找包含 apps 的目录或文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>-ipath pattern</strong><br>insensitive path, 用法同 <code>-path</code>, 只是 <code>pattern</code> 对大小写不敏感。</p>
+</li>
+<li><p><strong>-regex pattern</strong><br>和 <code>-path</code> 差不多。</p>
+</li>
+<li><p><strong>-user uname</strong><br>按照文件或目录所属用户查找。</p>
+</li>
+<li><p><strong>-group gname</strong><br>按照文件或目录所属组查找。</p>
+</li>
+</ul>
+<p>更多选项查看 <code>find --help</code> 或 <code>man find</code>。</p>
+<h3 id="actions"><a href="#actions" class="headerlink" title="actions"></a>actions</h3><ul>
+<li><p><strong>-exec command ;</strong><br>对搜索的结果执行命令 <code>command</code>。如果命令是用搜索结果作为参数的，可以用 <code>{}</code> 作为占位符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find -path &quot;./apps*&quot; -exec</span><br><span class="line">find -path &quot;./apps*&quot; -exec file &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>-ok command ;</strong><br>类似 <code>-exec</code>，不过在执行命令 <code>command</code> 之前先要经过用户同意 (y/n)</p>
+</li>
+</ul>
+<h3 id="operators"><a href="#operators" class="headerlink" title="operators"></a>operators</h3><ul>
+<li><p><strong>(expr)</strong><br>优先操作符，和一般运算的 <code>()</code> 一样。</p>
+</li>
+<li><p><strong>! expr</strong><br>取反</p>
+</li>
+<li><p><strong>expr1 expr2</strong><br>与，即 <code>expr1</code> 和 <code>expr2</code>，相当于 Python 表达式 <code>expr1 and expr2</code>。</p>
+</li>
+<li><p><strong>expr1 -a expr2</strong><br>同 <code>expr1 expr2</code></p>
+</li>
+<li><p><strong>expr1 -and expr2</strong><br>同 <code>expr1 expr2</code>，但是不遵循 POSIX。</p>
+</li>
+<li><p><strong>expr1 -o expr2</strong><br>或，即 <code>expr1</code> 或 <code>expr2</code>，相当于 Python 表达式 <code>expr1 or expr2</code>。</p>
+</li>
+<li><p><strong>expr1 -or expr2</strong><br>同 <code>expr1 -o expr2</code>，但是不遵循 POSIX。</p>
+</li>
+</ul>
+</div><div class="tags"><a href="/tags/linux/">linux</a><a href="/tags/cmd/">cmd</a></div><div class="post-nav"><a href="/2018/02/01/http/basic_http_authorization/" class="pre">HTTP - Basic Authentication</a><a href="/2017/01/01/algorithm/basic/" class="next">Algorithm - Basic</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>

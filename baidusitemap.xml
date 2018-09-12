@@ -4,8 +4,90 @@
 
     
   <url>
+    <loc>https://lizsgh.github.io/2018/01/01/linux/cmd_find/</loc>
+    <lastmod>2018-09-12T08:15:36.228Z</lastmod>
+    <data>
+        <display>
+        <title>linux command - find</title>
+        <pubTime>2017-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>linux</tag>
+         
+        <tag>cmd</tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux - cmd" url="https://lizsgh.github.io/categories/Linux-cmd/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/01/hello-world/</loc>
+    <lastmod>2018-09-12T07:47:33.451Z</lastmod>
+    <data>
+        <display>
+        <title>Hello World</title>
+        <pubTime>2016-12-31T16:00:00.000Z</pubTime>
+        
+        <tag>other</tag>
+         
+         
+           
+             
+              <breadCrumb title="Other" url="https://lizsgh.github.io/categories/Other/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/01/algorithm/basic/</loc>
+    <lastmod>2018-09-12T07:45:26.526Z</lastmod>
+    <data>
+        <display>
+        <title>Algorithm - Basic</title>
+        <pubTime>2016-12-31T16:00:01.000Z</pubTime>
+        
+        <tag>algorithm</tag>
+         
+         
+           
+             
+              <breadCrumb title="Algorithm" url="https://lizsgh.github.io/categories/Algorithm/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lizsgh.github.io/2018/02/01/http/basic_http_authorization/</loc>
+    <lastmod>2018-09-12T07:44:44.871Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP - Basic Authentication</title>
+        <pubTime>2018-01-31T16:00:00.000Z</pubTime>
+        
+        <tag>http</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTTP" url="https://lizsgh.github.io/categories/HTTP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lizsgh.github.io/2017/01/01/others/lizsgh.github.io/</loc>
-    <lastmod>2018-09-12T06:27:39.230Z</lastmod>
+    <lastmod>2018-09-12T07:39:29.908Z</lastmod>
     <data>
         <display>
         <title>lizsgh.github.io</title>
@@ -18,21 +100,6 @@
              
               <breadCrumb title="other" url="https://lizsgh.github.io/categories/other/"/>
           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lizsgh.github.io/2018/09/12/hello-world/</loc>
-    <lastmod>2018-09-12T04:45:15.288Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2018-09-12T04:45:15.288Z</pubTime>
-        
-         
-           
         </display>
     </data>
     </url>
