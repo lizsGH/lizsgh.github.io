@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lizsgh.github.io/2018/01/01/tcp/3-handshake_and_4-waves/</loc>
+    
+    <lastmod>2018-09-12T10:04:31.511Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/01/01/others/terminal_shortcut/</loc>
+    
+    <lastmod>2018-09-12T09:45:42.959Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/01/others/lizsgh.github.io/</loc>
+    
+    <lastmod>2018-09-12T08:32:11.774Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lizsgh.github.io/2018/01/01/linux/cmd_find/</loc>
     
-    <lastmod>2018-09-12T08:15:36.228Z</lastmod>
+    <lastmod>2018-09-12T08:31:46.194Z</lastmod>
     
   </url>
   
@@ -26,13 +47,6 @@
     <loc>https://lizsgh.github.io/2018/02/01/http/basic_http_authorization/</loc>
     
     <lastmod>2018-09-12T07:44:44.871Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2017/01/01/others/lizsgh.github.io/</loc>
-    
-    <lastmod>2018-09-12T07:39:29.908Z</lastmod>
     
   </url>
   

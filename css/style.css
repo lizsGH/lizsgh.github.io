@@ -190,7 +190,6 @@ body {
   background: #e5e5e5;
 }
 .layout-g {
-  overflow: hidden;
   letter-spacing: -0.31em;
   word-spacing: -0.43em;
   text-rendering: optimizespeed;
@@ -523,7 +522,7 @@ body {
   padding-bottom: 10px;
   font-weight: bold;
   font-size: 32px;
-  line-height: 1.1;
+  line-height: 1.5;
 }
 .post .post-title a {
   color: #595259;
