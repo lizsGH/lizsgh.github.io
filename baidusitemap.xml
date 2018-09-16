@@ -4,11 +4,31 @@
 
     
   <url>
-    <loc>https://lizsgh.github.io/2017/02/01/git/stashing_and_cleaning/</loc>
-    <lastmod>2018-09-15T19:11:24.188Z</lastmod>
+    <loc>https://lizsgh.github.io/2017/02/02/git/git_clean/</loc>
+    <lastmod>2018-09-16T19:46:36.100Z</lastmod>
     <data>
         <display>
-        <title>Stashing and Cleaning</title>
+        <title>git clean</title>
+        <pubTime>2017-02-01T16:00:00.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="Git" url="https://lizsgh.github.io/categories/Git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lizsgh.github.io/2017/02/01/git/git_stash/</loc>
+    <lastmod>2018-09-16T17:56:17.340Z</lastmod>
+    <data>
+        <display>
+        <title>git stash</title>
         <pubTime>2017-01-31T16:00:00.000Z</pubTime>
         
         <tag>git</tag>
