@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lizsgh.github.io/2018/11/22/python/object_oriented_programming/</loc>
+    <loc>https://lizsgh.github.io/2017/01/01/python/builtin_function/</loc>
     
-    <lastmod>2018-11-22T09:16:42.910Z</lastmod>
+    <lastmod>2018-11-28T12:45:10.765Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/11/24/python/object_oriented_programming/</loc>
+    
+    <lastmod>2018-11-24T12:45:11.469Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/11/24/python/abstract_base_classes/</loc>
+    
+    <lastmod>2018-11-24T10:30:15.439Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://lizsgh.github.io/2018/11/08/python/data_model/</loc>
     
     <lastmod>2018-11-08T07:06:15.142Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2017/01/01/python/builtin_function/</loc>
-    
-    <lastmod>2018-11-07T09:45:51.521Z</lastmod>
     
   </url>
   
