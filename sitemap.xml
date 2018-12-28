@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://lizsgh.github.io/2018/12/29/http/cors/</loc>
+    
+    <lastmod>2018-12-28T19:48:51.782Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/12/09/python/django_tutorial_2/</loc>
+    
+    <lastmod>2018-12-08T16:41:21.923Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/06/01/python/django_tutorial_1/</loc>
+    
+    <lastmod>2018-12-07T13:02:14.773Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/12/07/others/vim/</loc>
+    
+    <lastmod>2018-12-07T08:46:36.442Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://lizsgh.github.io/2018/12/06/linux/cmd_tcpdump/</loc>
     
     <lastmod>2018-12-05T18:37:44.672Z</lastmod>
