@@ -6,7 +6,9 @@
 <li>浏览器行为跟踪 (如跟踪分析用户行为等)</li>
 </ul>
 <p>Cookie 曾一度用于客户端数据的存储，因当时并没有其它合适的存储办法而作为唯一的存储手段，但现在随着现代浏览器开始支持各种各样的存储方式，Cookie 渐渐被淘汰。Cookie 的大小不超过 4KB，而且每次请求都会发送回服务器，带来额外的性能开销。新的浏览器 API 已经允许开发者直接将数据存储到本地，如使用 <code>Web storage API</code>或更加高级的<code>IndexedDB</code>。</p>
+<hr>
 <h2 id="创建-Cookie"><a href="#创建-Cookie" class="headerlink" title="创建 Cookie"></a>创建 Cookie</h2><p>当服务器收到 HTTP 请求时，服务器可以通过响应头部的 <code>Set-Cookie</code> 字段将 cookies 发送给客户端浏览器。浏览器收到响应之后，通常会保存下 cookies，之后对该服务器的每一次请求中都通过请求头部的 <code>Cookie</code> 字段将相应的 cookies 附带发送到服务器。</p>
+<hr>
 <h2 id="Set-Cookie"><a href="#Set-Cookie" class="headerlink" title="Set-Cookie"></a>Set-Cookie</h2><p>响应首部<code>Set-Cookie</code>被用来由服务器端向客户端发送 cookies。<br>Syntax:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt; </span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Expires=&lt;date&gt;</span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Max-Age=&lt;non-zero-digit&gt;</span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Domain=&lt;domain-value&gt;</span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Path=&lt;path-value&gt;</span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Secure</span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; HttpOnly</span><br><span class="line"></span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; SameSite=Strict</span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; SameSite=Lax</span><br><span class="line"></span><br><span class="line">// Multiple directives are also possible, <span class="keyword">for</span> example:</span><br><span class="line">Set-Cookie: &lt;cookie-name&gt;=&lt;cookie-value&gt;; Domain=&lt;domain-value&gt;; Secure; HttpOnly</span><br></pre></td></tr></table></figure></p>
 <ul>
 <li><p><strong><code>&lt;cookie-name&gt;=&lt;cookie-value&gt;</code></strong><br>cookies 键值对。</p>
@@ -18,10 +20,10 @@
 </li>
 </ul>
 </li>
-<li><p><strong>Expires=<date></date></strong><br>可选，指定 cookie 的有效日期，格式和<code>Date</code>首部字段一样。注意：该有效日期是指客户端上的日期，不是服务端。如：</p>
+<li><p><strong><code>Expires=&lt;date&gt;</code></strong><br>可选，指定 cookie 的有效日期，格式和<code>Date</code>首部字段一样。注意：该有效日期是指客户端上的日期，不是服务端。如：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><strong>Max-Age=<non-zero-digit></non-zero-digit></strong><br>可选，指定 cookie 的有效时间，值为非零整数，单位为秒。如<code>Max-Age=60</code>，表示 cookie 在 60 秒之后就会过期。</p>
+<li><p><strong><code>Max-Age=&lt;non-zero-digit&gt;</code></strong><br>可选，指定 cookie 的有效时间，值为非零整数，单位为秒。如<code>Max-Age=60</code>，表示 cookie 在 60 秒之后就会过期。</p>
 </li>
 <li><p><strong><code>Domain=&lt;domain-value&gt;</code></strong><br>可选，指定 cookie 可以送达的主机。如果不指定，默认为当前文档访问地址 (<code>Document.location</code>) 的主机，但是不包括子域名。如果指定了<code>Domain</code>，在一般包括子域名。如，<code>Domain=mozilla.org</code>，则 cookie 也可以发送到子域名中 (如<code>developer.mozilla.org</code>)。</p>
 </li>
@@ -32,16 +34,21 @@
 <li><p><strong><code>HttpOnly</code></strong><br>可选，设置了<code>HttpOnly</code>属性的 Cookie 不能使用 JavaScript 的 <code>Document.cookie</code> 属性、<code>XMLHttpRequest</code>或<code>Request</code> API 进行访问，以防范跨站脚本攻击 (XSS)。</p>
 </li>
 </ul>
+<hr>
 <h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 是请求首部，会将由服务器通过 <code>Set-Cookie</code> 响应首部发送过来的 cookies 发送到服务器。<br>这个首部可能会被完全移除，例如在浏览器的隐私设置为禁止用 cookie。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie: name=value[; name2=value2; name3=value3; ...]</span><br></pre></td></tr></table></figure></p>
 <p>如：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie: PHPSESSID=298zf09hf012fh2; csrftoken=u32t4o3tb3gg43; _gat=1;</span><br></pre></td></tr></table></figure></p>
+<hr>
 <h2 id="会话期-cookies-Session-cookies"><a href="#会话期-cookies-Session-cookies" class="headerlink" title="会话期 cookies (Session cookies)"></a>会话期 cookies (Session cookies)</h2><p>会话期 cookies ，即<code>Set-Cookie</code>中不设置过期日期 (<code>Expires</code>) 或有效时间 (<code>Max-Age</code>) 的 cookies。会话期 cookies 会在浏览器关闭时自动删除。<br>需要注意的是，有些浏览器提供了会话恢复功能，这种情况下即使关闭了浏览器，会话期 cookies 也会被保留下来，就像浏览器从来没有关闭一样。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: sessionid=38afes7a8; HttpOnly; Path=/</span><br></pre></td></tr></table></figure></p>
+<hr>
 <h2 id="持久化-cookies-Permanent-cookies"><a href="#持久化-cookies-Permanent-cookies" class="headerlink" title="持久化 cookies (Permanent cookies)"></a>持久化 cookies (Permanent cookies)</h2><p>持久化 cookies，即指定了过期日期 (<code>Expires</code>) 或有效时间 (<code>Max-Age</code>) 的 cookies。持久化 cookies 与客户端关闭与否无关，只有过期了才会失效。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Set-Cookie: id=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; Secure; HttpOnly</span><br></pre></td></tr></table></figure></p>
+<hr>
 <h2 id="第三方-cookies"><a href="#第三方-cookies" class="headerlink" title="第三方 cookies"></a>第三方 cookies</h2><p>每个 cookie 都会有与之关联的域 (Domain)，如果 cookie 的域和页面相同，那么我们称这个 cookie 为第一方 cookie (first-part cookie)。如果 cookie 的域和页面的域不同，则称之为第三方 cookie (third-part cookie)。 如，网站 A 上引用了网站 B 的一个 JS 脚本，当浏览器打开网站 A 的时候，也会请求网站 B 的这个脚本，这时候，网站 B 可以创建 cookie 一起响应返回。浏览器会将网站 B 的 cookie 也保存下来 (浏览器没有禁止第三方 cookie 的情况下)，这个 cookie 相对网站 A 来说就是第三方 cookie，只有用户访问网站 B 的时候使用。</p>
 <p><strong>利用第三方 cookies 进行精准推送广告 (如百度联盟)：</strong></p>
 <ul>
 <li>用户使用百度搜索的时候，百度搜索引擎会记住你的搜索内容，并设置了一个用户标识 cookie (BAIDUID)。</li>
 <li>当用户访问嵌有百度推广广告的网页的时候，广告模块 (如<code>&lt;iframe src=&quot;http://pos.baidu.com/...&quot;&gt;</code>) 会携带这个 cookie 一起发送到服务器。然后，服务器根据这个用户标识找到你搜索过的内容，生成相应的广告返回。</li>
 </ul>
+<hr>
 <h2 id="DNT-Do-Not-Track"><a href="#DNT-Do-Not-Track" class="headerlink" title="DNT (Do-Not-Track)"></a>DNT (Do-Not-Track)</h2><p><code>DNT</code>请求首部字段表明了用户对于网站追踪的意愿。<code>0</code>，表示用户同意目标站点追踪用户的个人信息；<code>1</code>，表示用户不愿意目标站点追踪用户的个人信息。</p>
 <p>用户对<code>DNT</code>的设置，可以使用<code>Navigator.doNotTrack</code>属性进行读取。</p>
 </div><div class="tags"><a href="/tags/http/">http</a></div><div class="post-nav"><a href="/2019/01/06/http/http_cors/" class="next">HTTP - Cross-Origin Resource Sharing (CORS)</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>
