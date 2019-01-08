@@ -4,12 +4,72 @@
 
     
   <url>
-    <loc>https://lizsgh.github.io/2018/12/29/http/cors/</loc>
+    <loc>https://lizsgh.github.io/2019/01/09/http/http_cookies/</loc>
+    <lastmod>2019-01-08T19:09:45.693Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP - Cookies</title>
+        <pubTime>2019-01-08T19:09:45.705Z</pubTime>
+        
+        <tag>http</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTTP" url="https://lizsgh.github.io/categories/HTTP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lizsgh.github.io/2018/02/01/http/http_authentication/</loc>
+    <lastmod>2019-01-06T15:12:50.322Z</lastmod>
+    <data>
+        <display>
+        <title>HTTP - Authentication</title>
+        <pubTime>2018-01-31T16:00:00.000Z</pubTime>
+        
+        <tag>http</tag>
+         
+         
+           
+             
+              <breadCrumb title="HTTP" url="https://lizsgh.github.io/categories/HTTP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lizsgh.github.io/2019/01/05/cordova/cordova_env/</loc>
+    <lastmod>2019-01-05T08:36:57.450Z</lastmod>
+    <data>
+        <display>
+        <title>SDK environment to deploy Cordova apps for Android devices</title>
+        <pubTime>2019-01-05T08:36:57.450Z</pubTime>
+        
+        <tag>cordova</tag>
+         
+         
+           
+             
+              <breadCrumb title="Cordova" url="https://lizsgh.github.io/categories/Cordova/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://lizsgh.github.io/2019/01/06/http/http_cors/</loc>
     <lastmod>2018-12-28T19:48:51.782Z</lastmod>
     <data>
         <display>
         <title>HTTP - Cross-Origin Resource Sharing (CORS)</title>
-        <pubTime>2018-12-28T19:48:51.790Z</pubTime>
+        <pubTime>2019-01-05T18:46:49.965Z</pubTime>
         
         <tag>http</tag>
          
@@ -417,26 +477,6 @@
            
              
               <breadCrumb title="Algorithm" url="https://lizsgh.github.io/categories/Algorithm/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://lizsgh.github.io/2018/02/01/http/basic_http_authorization/</loc>
-    <lastmod>2018-09-12T07:44:44.871Z</lastmod>
-    <data>
-        <display>
-        <title>HTTP - Basic Authentication</title>
-        <pubTime>2018-01-31T16:00:00.000Z</pubTime>
-        
-        <tag>http</tag>
-         
-         
-           
-             
-              <breadCrumb title="HTTP" url="https://lizsgh.github.io/categories/HTTP/"/>
           
         </display>
     </data>
