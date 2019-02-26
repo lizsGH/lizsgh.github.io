@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="www.lizs.cc"><meta name="keywords" content="lizs, www.lizs.cc, lizs.cc"><title>Vim usage - lizs</title><!-- link(rel="stylesheet", type="text/css", href="//fonts.neworld.org/css?family=Source+Code+Pro")--><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><!-- #header--><div id="layout" class="layout-g"><div class="layout-r"><div id="sidebar"><div class="site-name"><h1 class="title"><a href="/." class="home">lizs</a></h1><!-- h1.hidden= current_title--><!-- a#logo(href=url_for('.'))= config.title--><p class="description">www.lizs.cc</p></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="www.lizs.cc"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="time">{date}</div><div class="title">{title}</div><!-- .tags {tags}--></a></div></template></div></div><!-- .search-pla--><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-配置"><span class="toc-text">vim 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见配置："><span class="toc-text">常见配置：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim-常见用法"><span class="toc-text">vim 常见用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#光标移动"><span class="toc-text">光标移动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#复制"><span class="toc-text">复制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除-非插入模式下"><span class="toc-text">删除 (非插入模式下)</span></a></li></ol></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 近期文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/python/abstract_base_classes/">Python - Abstract Base Classes</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_upgrade_python2.6/">CentOS6.6 upgrade Python2.6 to Python2.7</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_deploy_php_mysql_nginx/">CentOS6.6 install PHP, MySQL and Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/linux/cmd_netstat/">Linux command - netstat</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/python/http_server/">Python - HTTP Server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/linux/cmd_tcpdump/">Linux command - tcpdump</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova/">Cordova</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP/IP</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/shell/" style="font-size: 15px;">shell</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a> <a href="/tags/cordova/" style="font-size: 15px;">cordova</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/others/" style="font-size: 15px;">others</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/django/" style="font-size: 15px;">django</a> <a href="/tags/tcp-ip/" style="font-size: 15px;">tcp/ip</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li></ul></div><div id="nav-menu"></div></div></div><div class="layout-l"><div class="content_container"><div class="post"><div class="header"><h1 class="post-title">Vim usage</h1><div class="post-meta"><p><span class="date">2015-09-01</span><span><a href="/categories/Others/" class="category">Others</a></span><span class="view_count"><i id="busuanzi_container_page_pv"><!-- i=  __('hits') + '数: '--><i id="busuanzi_value_page_pv"></i></i></span></p></div></div><div class="post-content"><h2 id="vim-配置"><a href="#vim-配置" class="headerlink" title="vim 配置"></a>vim 配置</h2><ul>
+<li>vim 配置文件： vim 首先读取当前用户的配置文件 <code>~/.vimrc</code>，如果没有则读取 root 用户的配置文件<code>/root/.vimrc</code>。</li>
+<li>在<code>.vimrc</code>文件中可以配置 vim 的永久属性。<code>.vimrc</code> 文件里面的注释用英文的双引号<code>&quot;</code>。</li>
+<li>在文件编辑时，命令模式下可以配置 vim 的暂时属性，即关闭文件则失效。如给当前文件显示行号：<code>:set nu</code></li>
+</ul>
+<h4 id="常见配置："><a href="#常见配置：" class="headerlink" title="常见配置："></a>常见配置：</h4><ul>
+<li><code>set nu</code>：添加行号。</li>
+<li><code>set nonu</code>：删除行号。</li>
+<li><code>set tabstop=4</code>：设置 Tab 键占 4 个空格。</li>
+<li><code>set ai</code>：自动换行。</li>
+</ul>
+<hr>
+<h2 id="vim-常见用法"><a href="#vim-常见用法" class="headerlink" title="vim 常见用法"></a>vim 常见用法</h2><ul>
+<li><code>:w</code>：保存当前修改。</li>
+<li><code>:w new_file</code>：保存到新文件。当编辑没有权限的文件时，可以利用这个命令将当前修改保存到有权限的新文件中。</li>
+<li><code>:w! exist_file</code>：保存到已有文件。</li>
+</ul>
+<hr>
+<ul>
+<li><code>:q</code>：退出，当文件没有修改过的时候才有效，如果有修改过，需要保存退出或强制退出。</li>
+<li><code>:wq</code>, <code>:x</code>：退出，并保存修改。<code>:wq</code>，不管文件有没有修改，每次执行命令都会更新文件的修改时间；<code>:x</code>，当文件没有修改过的时候，直接退出，并不更新文件的修改时间。</li>
+<li><code>:q!</code>：强制退出，放弃修改。</li>
+</ul>
+<hr>
+<ul>
+<li><p>查找</p>
+<ul>
+<li><code>/word</code>：从开头到结尾查找文件中的 “word”。</li>
+<li><code>?word</code>：从结尾到开头查找文件中的 “word”。<br>查看下一个，按<code>n</code>；上一个，按<code>N</code>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>替换<br>在命令模式下，可以用 <code>s</code> 命令来替换字符串：<code>: [option1]s/oldStr/newStr/[option2]</code></p>
+<ul>
+<li><p><code>[option2]</code> 可以是 <code>g</code> <code>c</code> <code>p</code></p>
+<ul>
+<li><code>g</code>：表示全局替换</li>
+<li><code>c</code>：表示进行确认再替换</li>
+</ul>
+</li>
+<li><p><code>p</code>：表示替换结果逐行显示（Ctrl + L 恢复屏幕）</p>
+</li>
+<li><code>: s/oldStr/newStr/</code>：替换当前行第一个 oldStr 字符串</li>
+<li><code>: s/oldStr/newStr/g</code>：替换当前行所有 oldStr 字符串</li>
+<li><code>: m, ns/oldStr/newStr</code>：替换从第 m 行到第 n 行中的第一个 oldStr 字符串</li>
+<li><code>: n, $s/oldStr/newStr/g</code>：替换从第 n 行到最后一行的所有 oldStr 字符串</li>
+<li><code>: ., $s/oldStr/newStr/</code>：替换从当前行到最后一行的第一个 oldStr 字符串</li>
+<li><code>: %s/oldStr/newStr/g</code>：替换每一行中所有的 oldStr 字符串</li>
+<li><code>: %s/oldStr/newStr/c</code>：替换每行中的第一个 oldStr 字符串，但是替换需要确认</li>
+<li><code>: %s/oldStr/newStr/gc</code>：替换所有的 oldStr 字符串，但是替换需要确认</li>
+<li>可以使用 <code>#</code> 和 <code>+</code> 代替 <code>/</code> 作为分隔符，此时命令中出现的 <code>/</code> 将作为普通字符处理，如：<ul>
+<li><code>: s#oldStr/#newStr#</code>：替换当前行的 oldStr/ 字符串</li>
+<li><code>: %s+/oldStr/+newStr</code>：替换所有 /oldStr/ 字符串</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>跳到指定行</p>
+<ul>
+<li>正常模式下，<code>ngg</code> 或 <code>nG</code>，<code>n</code> 为行号。如跳到 35 行，<code>35gg</code>。<code>G</code> 可以直接跳到最后一行。</li>
+<li>命令模式下，<code>:n</code></li>
+<li>如果想打开文件即跳转，<code>sudo vim +n file_name</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>复制一(n)行</p>
+<ul>
+<li>正常模式下，复制光标所在的整行，<code>yy</code>；复制 n 行(从光标所在行开始)，<code>nyy</code>。</li>
+<li>命令模式下，复制从第 n 行到 n + 5 行的内容到第 m 行后面 <code>n, n+5 copy/co m</code></li>
+<li>正常模式下，把光标移到要开始复制的那一行 <code>ngg</code>，然后，计算一下删除哪几行(如，n ～ n+5，包括n和n+5)，执行 <code>d5</code>（即删除第 n 到第 n+5 这 6 行）。删除完之后，恢复 <code>u</code>。将光标移到要粘贴的位置，<code>p</code>。</li>
+</ul>
+</li>
+<li><p>粘贴一行<br>正常模式下，将复制到的内容粘贴到光标所在的行，<code>p</code></p>
+</li>
+<li><p>删除一行<br>正常模式下，删除光标所在的行，<code>dd</code></p>
+</li>
+<li><p>删除多行<br>正常模式下，删除光标所在的行开始的 n + 1 行，<code>dn</code>。<code>n</code>的值为最后一行的行号减去开始行的行号。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p>撤消<br>在正常模式下,撤消上一步,<code>u</code></p>
+</li>
+<li><p>恢复撤消<br>在正常模式下,恢复撤消的内容,<code>Ctrl + r</code></p>
+</li>
+</ul>
+<hr>
+<h3 id="光标移动"><a href="#光标移动" class="headerlink" title="光标移动"></a>光标移动</h3><ul>
+<li><code>h</code>：向左；<code>nh</code>，向左移动 n 个字符。</li>
+<li><code>j</code>：向下；<code>nj</code>，向下移动 n 行。</li>
+<li><code>k</code>：向上；<code>nk</code>，向上移动 n 行。</li>
+<li><code>l</code>：向右。<code>nl</code>，向右移动 n 个字符。</li>
+<li><code>w</code>：向右移动到下个单词的首个字符处；<code>nw</code>，向右移动 n 个单词。</li>
+<li><code>b</code>：与 <code>w</code> 方向相反。</li>
+<li><code>e</code>：向右移动到下个单词的尾字符处；<code>ne</code>，向右移动 n 个单词。</li>
+<li><code>ge</code>：与 <code>e</code> 方向相反。</li>
+<li><code>^</code>：光标移动到该行的第一个字符处（不包括空格）。</li>
+<li><code>$</code>：光标移动到该行的尾字符处。</li>
+<li><code>0</code>：光标移动到该行的行首。</li>
+<li><code>ngg</code>或<code>nG</code>：光标移动到 n 行的第一个字符上。</li>
+<li><code>gg</code>：移动到文件首行。</li>
+<li><code>G</code>：光标移动到文件末行。</li>
+<li><code>Ctrl + f</code>：向上翻页。</li>
+<li><code>Ctrl + b</code></li>
+</ul>
+<hr>
+<ul>
+<li>选择字符<br>正常模式下，<code>v</code>，进入可视模式，然后通过光标移动来选择字符。</li>
+</ul>
+<hr>
+<h3 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h3><ul>
+<li><code>y</code>：复制选中的字符，选中字符可以在可视模式下，然后 <code>hjkl</code> 选择。</li>
+<li><code>ye</code>：复制当前光标位置到单词结尾的字符内容到 vim 缓冲区。<code>nye</code>，复制 n 个单词。</li>
+<li><code>yw</code>：复制当前光标位置到下个单词开头的字符内容到 vim 缓冲区。<code>nyw</code>，复制 n 个单词。</li>
+<li><code>y^</code>：复制当前光标位置到行首的内容到 vim 缓冲区。</li>
+<li><code>y$</code>：复制当前光标位置到行尾的内容到 vim 缓冲区。</li>
+<li><code>yy</code>：复制当前行的内容到 vim 缓冲区。<code>nyy</code>，复制 n 行。</li>
+<li>复制第 m 行到第 n 行的内容到 vim 缓冲区：命令模式下，<code>m, ny</code></li>
+<li>复制第 m 行到第 n 行的内容到第 k 行后面：命令模式下，<code>m, n copy/co k</code></li>
+</ul>
+<blockquote>
+<p>以上复制，都是将内容复制到 vim 剪贴板，而且 vim 具有多个剪贴板，而我们平时操作的复制粘贴是将内容保存到系统的剪贴板。所以，当你想从另外的地方复制了一段内容（如，浏览器某个网址上复制一段内容）到当前 vim 来，是不能够直接用 <code>p</code> 来粘贴的。因为，<code>p</code> 命令是默认粘贴当前 vim 缓冲区的内容。</p>
+</blockquote>
+<p>vim 中的剪贴板内容是保存在 register 中的，在 vim 命令模式下，可以用 <code>reg</code> 命令来查看 register 中的内容。</p>
+<p>（ubuntu 16.04）我们可以看到，系统中复制的内容保存在 <code>&quot;*</code> 和 <code>&quot;+</code> 的 register 中。所以，如果我们想要将系统剪贴板的内容粘贴到当前 vim，只需在粘贴命令前添加 register 标记就可以了。</p>
+<ul>
+<li><code>&quot;*p</code>或<code>&quot;+p</code>：将系统剪贴板的内容粘贴到光标后面。</li>
+<li><code>&quot;*y</code>或<code>“+y</code>：将当前 vim 中选中的内容复制到系统剪贴板中。</li>
+</ul>
+<hr>
+<h3 id="删除-非插入模式下"><a href="#删除-非插入模式下" class="headerlink" title="删除 (非插入模式下)"></a>删除 (非插入模式下)</h3><ul>
+<li><code>x</code>或<code>d</code>：删除当前光标下的字符。</li>
+<li><code>dw</code>：删除光标之后的单词剩余部分。</li>
+<li><code>d$</code>：删除光标之后的该行剩余部分。</li>
+<li><code>dd</code>：删除当前行。</li>
+<li><code>dn</code>：<code>n</code>为最后一行的行号减去开始行的行号的值，删除光标所在的行开始的 n + 1 行。</li>
+<li><code>c</code>：删除光标下的字符后，进入插入模式。</li>
+<li><code>cc</code>：删除当前行之后，进入插入模式。</li>
+</ul>
+</div><div class="tags"><a href="/tags/others/">others</a></div><div class="post-nav"><a href="/2015/09/02/mysql/mysql_change_password/" class="pre">MySQL 修改数据库登录密码</a><a href="/2015/09/01/php/php_三元运算符/" class="next">PHP - 三元运算符 (?:)</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>

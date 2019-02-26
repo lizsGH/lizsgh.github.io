@@ -2,65 +2,513 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lizsgh.github.io/2019/01/09/http/http_cookies/</loc>
+    <loc>https://lizsgh.github.io/2016/02/13/git/curl/</loc>
     
-    <lastmod>2019-01-08T19:19:06.244Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2018/02/01/http/http_authentication/</loc>
-    
-    <lastmod>2019-01-06T15:12:50.322Z</lastmod>
+    <lastmod>2019-02-26T13:43:31.100Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lizsgh.github.io/2019/01/05/cordova/cordova_env/</loc>
+    <loc>https://lizsgh.github.io/2016/01/02/git/basic_config/</loc>
     
-    <lastmod>2019-01-05T08:36:57.450Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2019/01/06/http/http_cors/</loc>
-    
-    <lastmod>2018-12-28T19:48:51.782Z</lastmod>
+    <lastmod>2019-02-26T13:31:44.513Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lizsgh.github.io/2018/12/09/python/django_tutorial_2/</loc>
+    <loc>https://lizsgh.github.io/2016/01/01/git/git_stash/</loc>
     
-    <lastmod>2018-12-08T16:41:21.923Z</lastmod>
+    <lastmod>2019-02-26T13:31:34.601Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/01/01/git/git_clean/</loc>
+    
+    <lastmod>2019-02-26T13:31:16.513Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/01/01/git/submodule/</loc>
+    
+    <lastmod>2019-02-26T13:31:02.601Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/03/19/linux/ssh_login_server/</loc>
+    
+    <lastmod>2019-02-26T13:25:35.869Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/10/26/linux/ubuntu_crontab/</loc>
+    
+    <lastmod>2019-02-26T13:19:42.846Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/07/14/linux/ubuntu_deploy_openvpn/</loc>
+    
+    <lastmod>2019-02-26T13:16:10.771Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/03/25/linux/ubuntu_install_rpm_packages/</loc>
+    
+    <lastmod>2019-02-26T13:04:03.825Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/03/26/nginx/nginx%E9%85%8D%E7%BD%AE%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%EF%BC%8C%E8%AE%A9%E5%85%AC%E7%BD%91%E8%AE%BF%E9%97%AE%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    
+    <lastmod>2019-02-26T12:59:05.108Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/02/02/php/curl%E8%AE%BF%E9%97%AE%E9%9C%80%E8%A6%81%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95%E7%9A%84%E7%BD%91%E7%AB%99/</loc>
+    
+    <lastmod>2019-02-26T12:56:24.937Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2015/09/01/php/php_%E4%B8%89%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6/</loc>
+    
+    <lastmod>2019-02-26T12:54:49.782Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/02/04/php/php5_cgi_lsbinitscript/</loc>
+    
+    <lastmod>2019-02-26T12:52:29.964Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/02/01/php/php_cgi_start/</loc>
+    
+    <lastmod>2019-02-26T12:50:49.965Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/01/01/php/memcached_install/</loc>
+    
+    <lastmod>2019-02-26T12:47:25.776Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/01/01/php/memcached_intro/</loc>
+    
+    <lastmod>2019-02-26T12:45:30.054Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/01/python/coding/</loc>
+    
+    <lastmod>2019-02-26T12:40:18.190Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/05/01/python/module/</loc>
+    
+    <lastmod>2019-02-26T12:33:28.633Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/05/01/python/scope_and_namespace/</loc>
+    
+    <lastmod>2019-02-26T12:32:02.641Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/05/01/python/slice/</loc>
+    
+    <lastmod>2019-02-26T12:28:02.936Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://lizsgh.github.io/2016/06/01/python/django_tutorial_1/</loc>
     
-    <lastmod>2018-12-07T13:02:14.773Z</lastmod>
+    <lastmod>2019-02-26T12:22:21.675Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lizsgh.github.io/2018/12/07/others/vim/</loc>
+    <loc>https://lizsgh.github.io/2018/03/05/linux/centos6.6_upgrade_python2.6/</loc>
     
-    <lastmod>2018-12-07T08:46:36.442Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2018/12/06/linux/cmd_tcpdump/</loc>
-    
-    <lastmod>2018-12-05T18:37:44.672Z</lastmod>
+    <lastmod>2019-02-26T12:21:34.287Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://lizsgh.github.io/2018/12/04/linux/cmd_netstat/</loc>
+    <loc>https://lizsgh.github.io/2016/06/02/python/class/</loc>
     
-    <lastmod>2018-12-04T12:54:25.659Z</lastmod>
+    <lastmod>2019-02-26T12:20:04.931Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/18/python/sphinx/</loc>
+    
+    <lastmod>2019-02-26T09:33:34.454Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/12/18/python/selenium/</loc>
+    
+    <lastmod>2019-02-26T09:24:29.055Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/10/22/linux/shell_input_output/</loc>
+    
+    <lastmod>2019-02-26T09:19:30.479Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/10/23/linux/shell_variable/</loc>
+    
+    <lastmod>2019-02-26T09:15:12.764Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/10/27/linux/shell_method_return_value/</loc>
+    
+    <lastmod>2019-02-26T09:11:41.671Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/10/25/linux/shell_%E9%80%9A%E9%85%8D%E7%AC%A6/</loc>
+    
+    <lastmod>2019-02-26T09:11:29.223Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2015/09/02/mysql/mysql_change_password/</loc>
+    
+    <lastmod>2019-02-26T09:03:48.462Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2015/04/03/mysql/CURD/</loc>
+    
+    <lastmod>2019-02-26T09:01:10.131Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2015/04/04/mysql/column_types/</loc>
+    
+    <lastmod>2019-02-26T08:59:13.326Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2015/04/05/mysql/select/</loc>
+    
+    <lastmod>2019-02-26T08:57:36.299Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/08/21/mysql/character_set/</loc>
+    
+    <lastmod>2019-02-26T08:53:44.584Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/04/27/php/wechat_redpack/</loc>
+    
+    <lastmod>2019-02-26T08:42:05.142Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/04/23/linux/service/</loc>
+    
+    <lastmod>2019-02-26T08:32:52.887Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/11/13/linux/ubuntu_desktop_entry/</loc>
+    
+    <lastmod>2019-02-26T08:29:34.704Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/03/21/linux/expect/</loc>
+    
+    <lastmod>2019-02-26T08:25:18.105Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/07/02/linux/swap/</loc>
+    
+    <lastmod>2019-02-26T08:21:41.027Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/02/python/virtualenv/</loc>
+    
+    <lastmod>2019-02-26T08:16:51.601Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/02/linux/autossh_ssh_proxy/</loc>
+    
+    <lastmod>2019-02-26T08:14:32.416Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/07/01/linux/cmd_find/</loc>
+    
+    <lastmod>2019-02-26T08:12:20.626Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/11/11/linux/linux_LSBInitScript/</loc>
+    
+    <lastmod>2019-02-26T08:11:37.892Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/11/12/linux/linux_add_autossh_system_service/</loc>
+    
+    <lastmod>2019-02-26T08:09:09.631Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/03/05/linux/centos6.6_deploy_php_mysql_nginx/</loc>
+    
+    <lastmod>2019-02-26T08:05:11.077Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/05/12/python/webbrowser/</loc>
+    
+    <lastmod>2019-02-26T08:00:07.802Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/12/01/cordova/cordova_jpush/</loc>
+    
+    <lastmod>2019-02-26T07:53:52.169Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/04/02/python/urllib2/</loc>
+    
+    <lastmod>2019-02-26T07:38:34.519Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2015/06/01/others/lizsgh.github.io/</loc>
+    
+    <lastmod>2019-02-26T07:36:24.392Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/01/01/others/terminal_shortcut/</loc>
+    
+    <lastmod>2019-02-26T07:35:57.150Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2015/09/01/others/vim/</loc>
+    
+    <lastmod>2019-02-26T07:35:47.278Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/01/05/linux/cmd_netstat/</loc>
+    
+    <lastmod>2019-02-26T07:35:11.032Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/01/02/linux/cmd_tcpdump/</loc>
+    
+    <lastmod>2019-02-26T07:34:48.857Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/11/01/http/http_authentication/</loc>
+    
+    <lastmod>2019-02-26T07:32:44.203Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/05/02/http/http_cookies/</loc>
+    
+    <lastmod>2019-02-26T07:32:17.088Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/05/01/http/http_cors/</loc>
+    
+    <lastmod>2019-02-26T07:32:01.125Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/01/docker/command_line_interfaces/</loc>
+    
+    <lastmod>2019-02-26T07:31:10.223Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/01/docker/installation/</loc>
+    
+    <lastmod>2019-02-26T07:30:49.421Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/10/01/cordova/cordova_env/</loc>
+    
+    <lastmod>2019-02-26T07:30:21.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/06/01/python/threading/</loc>
+    
+    <lastmod>2019-02-26T07:28:34.569Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/07/01/python/multiprocessing/</loc>
+    
+    <lastmod>2019-02-26T07:28:13.442Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/01/01/python/object_oriented_programming/</loc>
+    
+    <lastmod>2019-02-26T07:15:49.328Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/01/02/python/socket_server/</loc>
+    
+    <lastmod>2019-02-26T07:08:56.156Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/01/01/python/socket/</loc>
+    
+    <lastmod>2019-02-26T07:07:44.076Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/01/03/python/http_server/</loc>
+    
+    <lastmod>2019-02-26T07:06:39.492Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/09/01/python/tuple/</loc>
+    
+    <lastmod>2019-02-25T15:11:15.420Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/09/01/python/set/</loc>
+    
+    <lastmod>2019-02-25T15:03:09.518Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2017/01/01/python/pip/</loc>
+    
+    <lastmod>2019-02-25T15:02:05.703Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/09/01/python/list/</loc>
+    
+    <lastmod>2019-02-25T14:47:07.088Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/09/01/python/string/</loc>
+    
+    <lastmod>2019-02-25T14:30:17.107Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/09/01/python/dictionary/</loc>
+    
+    <lastmod>2019-02-25T12:06:33.811Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2018/05/01/python/abstract_base_classes/</loc>
+    
+    <lastmod>2019-02-25T12:00:35.899Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://lizsgh.github.io/2016/10/01/python/data_model/</loc>
+    
+    <lastmod>2019-02-25T12:00:06.648Z</lastmod>
     
   </url>
   
@@ -72,86 +520,9 @@
   </url>
   
   <url>
-    <loc>https://lizsgh.github.io/2018/12/02/docker/installation/</loc>
-    
-    <lastmod>2018-12-02T13:46:27.345Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://lizsgh.github.io/2017/01/01/python/builtin_function/</loc>
     
     <lastmod>2018-11-28T12:48:27.841Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2018/11/24/python/object_oriented_programming/</loc>
-    
-    <lastmod>2018-11-24T12:45:11.469Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2018/11/24/python/abstract_base_classes/</loc>
-    
-    <lastmod>2018-11-24T10:30:15.439Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2018/11/08/python/data_model/</loc>
-    
-    <lastmod>2018-11-08T07:06:15.142Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2017/02/02/git/git_clean/</loc>
-    
-    <lastmod>2018-09-16T19:46:36.100Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2017/02/01/git/git_stash/</loc>
-    
-    <lastmod>2018-09-16T17:56:17.340Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2017/01/02/git/basic_config/</loc>
-    
-    <lastmod>2018-09-14T15:37:10.892Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2018/01/01/others/terminal_shortcut/</loc>
-    
-    <lastmod>2018-09-12T09:45:42.959Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2017/01/01/others/lizsgh.github.io/</loc>
-    
-    <lastmod>2018-09-12T08:32:11.774Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2018/01/01/linux/cmd_find/</loc>
-    
-    <lastmod>2018-09-12T08:31:46.194Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://lizsgh.github.io/2017/01/01/hello-world/</loc>
-    
-    <lastmod>2018-09-12T07:47:33.451Z</lastmod>
     
   </url>
   

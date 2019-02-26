@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="www.lizs.cc"><meta name="keywords" content="lizs, www.lizs.cc, lizs.cc"><title>Python - threading - lizs</title><!-- link(rel="stylesheet", type="text/css", href="//fonts.neworld.org/css?family=Source+Code+Pro")--><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><!-- #header--><div id="layout" class="layout-g"><div class="layout-r"><div id="sidebar"><div class="site-name"><h1 class="title"><a href="/." class="home">lizs</a></h1><!-- h1.hidden= current_title--><!-- a#logo(href=url_for('.'))= config.title--><p class="description">www.lizs.cc</p></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="www.lizs.cc"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="time">{date}</div><div class="title">{title}</div><!-- .tags {tags}--></a></div></template></div></div><!-- .search-pla--><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#threading-Thread-group-None-target-None-name-None-args-kwargs-daemon-None"><span class="toc-text">threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#threading-模块其它常用函数"><span class="toc-text">threading 模块其它常用函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#threading-Lock"><span class="toc-text">threading.Lock()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#threading-RLock"><span class="toc-text">threading.RLock()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#threading-Event"><span class="toc-text">threading.Event()</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 近期文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/python/abstract_base_classes/">Python - Abstract Base Classes</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_upgrade_python2.6/">CentOS6.6 upgrade Python2.6 to Python2.7</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_deploy_php_mysql_nginx/">CentOS6.6 install PHP, MySQL and Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/linux/cmd_netstat/">Linux command - netstat</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/python/http_server/">Python - HTTP Server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/linux/cmd_tcpdump/">Linux command - tcpdump</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova/">Cordova</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP/IP</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/shell/" style="font-size: 15px;">shell</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a> <a href="/tags/cordova/" style="font-size: 15px;">cordova</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/others/" style="font-size: 15px;">others</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/django/" style="font-size: 15px;">django</a> <a href="/tags/tcp-ip/" style="font-size: 15px;">tcp/ip</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li></ul></div><div id="nav-menu"></div></div></div><div class="layout-l"><div class="content_container"><div class="post"><div class="header"><h1 class="post-title">Python - threading</h1><div class="post-meta"><p><span class="date">2017-06-01</span><span><a href="/categories/Python/" class="category">Python</a></span><span class="view_count"><i id="busuanzi_container_page_pv"><!-- i=  __('hits') + '数: '--><i id="busuanzi_value_page_pv"></i></i></span></p></div></div><div class="post-content"><h2 id="threading-Thread-group-None-target-None-name-None-args-kwargs-daemon-None"><a href="#threading-Thread-group-None-target-None-name-None-args-kwargs-daemon-None" class="headerlink" title="threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)"></a>threading.Thread(group=None, target=None, name=None, args=(), kwargs={}, *, daemon=None)</h2><blockquote>
+<ul>
+<li><strong>group</strong>:</li>
+<li><strong>target</strong>: 线程的执行方法，在 <code>run()</code> 方法内被调用。</li>
+<li><strong>name</strong>: 线程名称</li>
+<li><strong>args</strong>: 传给线程执行方法 (target) 的参数，默认 <code>()</code>。位置参数和关键字参数都可以传，不过一定要注意顺序，传一个参数的时候要注意 <code>(a,)</code></li>
+<li><strong>kwargs</strong>: 传给线程执行方法 (target) 的参数，只能够传关键字参数，默认 <code>{}</code>。</li>
+<li><strong>daemon</strong>: Python3.3 新增参数。可以通过 <code>daemon</code> 参数来定义创建的线程是否为 daemon 线程。<br>如果 <code>daemon</code> 为 <code>True</code>，则创建的线程为 daemon 线程，否则，继承创建线程的 <code>daemon</code> 属性。</li>
+</ul>
+</blockquote>
+<ul>
+<li><strong>start()</strong> <br><br>启动线程</li>
+<li><strong>run()</strong> <br><br>线程执行的主要方法，方法里面实际上是调用了 <code>target</code> 参数的函数。所以线程的执行函数可以通过 <code>target</code> 参数传进来给 <code>run()</code>，也可以重写 <code>run()</code> 方法。</li>
+<li><p><strong>join(timeout=None)</strong> <br><br>阻塞当前程序，一个线程可以被 <code>join()</code> 多次。<code>timeout</code>：</p>
+<ul>
+<li><code>None</code>，会一直阻塞，直到全部被 <code>join()</code> 的线程执行完，才继续执行主体下面的代码。</li>
+<li><code>&gt;=0</code> 的 float 时间(seconds)：阻塞一定时间。<code>0</code>，即不阻塞。注意，经测试总阻塞时间为所有线程 <code>timeout</code> 的时间总和。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">thread_list = [threading.Thread(target=xxx) for _ in range(5)]  # 创建 5 个线程</span><br><span class="line">map(lambda t: t.start(), thread_list)  # 启动线程</span><br><span class="line">map(lambda t: t.join(timeout=1), thread_list)  # 设置阻塞模式</span><br><span class="line">print(&apos;END&apos;.center(100, &apos;-&apos;))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>创建线程，并且设置了每个线程阻塞 1s。所以 <code>print(&#39;END&#39;.center(100, &#39;-&#39;))</code> 语句会在全部线程执行完或者 5s 之后才去执行。</p>
+</li>
+<li><p><strong>name</strong> <br><br>获取或设置线程名称。</p>
+</li>
+<li><strong>ident</strong> <br><br>线程标识符，非零整数。</li>
+<li><p><strong>daemon</strong> <br><br>获取或设置线程 daemon 属性，设置 daemon 属性要在 <code>start()</code> 之前才会生效。如果不设置，会继承创建线程的程序的 <code>daemon</code> 属性值。如果线程为 daemon 线程，则主程序结束退出的时候，daemon 线程也会结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">thread_list = [threading.Thread(target=xxx) for _ in range(5)]  # 穿件 5 个线程</span><br><span class="line">map(lambda t: setattr(t, &apos;daemon&apos;, True), thread_list)</span><br><span class="line">map(lambda t: t.start(), thread_list)  # 启动线程</span><br><span class="line">time.sleep(5)</span><br><span class="line">exit()</span><br></pre></td></tr></table></figure>
+<p>程序创建了 5 个线程，并且都是 daemon 线程。所以，无论线程有没有执行完，主程序执行完 (5s后)，所有线程也会退出。</p>
+</li>
+</ul>
+<p><strong>注意：因为 daemon 线程是会随着主程序的退出而强制结束的，所以，当 daemon 线程的一些操作可能会得不到安全的结束 (如：操作文件的时候)。</strong></p>
+<ul>
+<li><strong>is_alive()</strong> <br><br>返回当前线程是否存活。</li>
+</ul>
+<p>threading 模块创建线程有两种方法：</p>
+<ul>
+<li><p>方法一，通过 <code>threading.Thread</code> 传 <code>target</code> 参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">def thread_run():</span><br><span class="line">    &quot;&quot;&quot;The thread mainly run function.&quot;&quot;&quot;</span><br><span class="line">    pass</span><br><span class="line">thread = threading.Thread(target=thread_run)</span><br><span class="line">thread.start()</span><br><span class="line">thread.join()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方法二，通过继承 <code>threading.Thread</code> 对象，重写 <code>run</code> 方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class SubThread(threading.Thread):</span><br><span class="line">    def run(self):</span><br><span class="line">        pass</span><br><span class="line">thread = SubThread()</span><br><span class="line">thread.start()</span><br><span class="line">thread.join()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="threading-模块其它常用函数"><a href="#threading-模块其它常用函数" class="headerlink" title="threading 模块其它常用函数"></a>threading 模块其它常用函数</h2><ul>
+<li><p><strong>threading.current_thread()</strong> <br><br>返回当前的 <code>Thread</code> 对象。</p>
+</li>
+<li><p><strong>threading.enumerate()</strong> <br><br>返回当前存活的 <code>Thread</code> 对象的列表。<strong>注意：返回的 <code>Thread</code> 对象包括后台线程。如：&lt;_MainThread&gt;/<writerthread>/<readerthread>/<pydbcommandthread>, etc.</pydbcommandthread></readerthread></writerthread></strong></p>
+</li>
+<li><p><strong>threading.active_count()</strong> <br><br>放回当前存活的 <code>Thread</code> 对象数量。<strong>注意：该数量包括了后台线程，其实就是 <code>enumerate()</code> 列表的数量。</strong></p>
+</li>
+<li><p><strong>threading.get_ident()</strong> <br><br>Python3.3 新增，其实就是 <code>Thread</code> 对象的 <code>ident</code> 属性。</p>
+</li>
+<li><p><strong>threading.main_thread()</strong> <br><br>Python3.4 新增，返回主线程。</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p>A primitive lock is a <strong>synchronization primitive</strong> that is not owned by a particular thread when locked. In Python, it is currently the lowest <strong>synchronization primitive</strong> available, implemented directly by <a href="https://docs.python.org/3/library/_thread.html#module-_thread" target="_blank" rel="noopener">_thread</a> extension module.</p>
+</blockquote>
+<blockquote>
+<p>原始锁不属于任何线程。一把原始锁只有两种状态：<code>locked</code> 和 <code>unlocked</code>。刚创建的锁属于 <code>unlocked</code> 状态。</p>
+</blockquote>
+<h2 id="threading-Lock"><a href="#threading-Lock" class="headerlink" title="threading.Lock()"></a>threading.Lock()</h2><blockquote>
+<p>用于生成原始锁的工厂方法。</p>
+</blockquote>
+<ul>
+<li><p><strong>acquire(block=True, timeout=-1)</strong> <br><br>获取一把线程锁 (即把锁从 <code>unlocked</code> 状态设置为 <code>locked</code> 状态)。返回 <code>True/False</code>。</p>
+<ul>
+<li><p><code>block</code>: <code>True/False</code>，设置申请获取线程锁的模式：阻塞(<code>True</code>)或非阻塞(<code>False</code>)。</p>
+<ul>
+<li><p><code>True</code>: 当为阻塞模式时，会一直阻塞直到获取到线程锁为止，然后返回 <code>True</code>。所以，在这个模式当一个线程多次获取线程锁的时候会造成死锁。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lock = threading.Lock()</span><br><span class="line">lock.acquire()  # 申请线程锁</span><br><span class="line">lock.acquire()  # 再次申请线程锁的时候会造成死锁</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>False</code>: 当为非阻塞模式时，如果没有获取到线程锁会立即返回 <code>False</code>。</p>
+</li>
+</ul>
+</li>
+<li><code>timeout</code>: <strong>Python3.2 新增</strong>，当 <code>block=True</code> 时有效，设置阻塞的超时时间。</li>
+</ul>
+</li>
+<li><p><strong>release()</strong> <br><br>释放线程锁 (即把锁设置为 <code>unlocked</code> 状态)，没有返回值。因为线程锁不是属于某个专属线程的，所以，释放锁 (<code>release()</code>) 的时候不一定要在上锁的那个线程。</p>
+</li>
+</ul>
+<p>当 <code>release</code> 一把 <code>unlocked</code> 状态的锁的时候会引起 <code>release unlocked lock</code> 错误。</p>
+<p><strong>threading 模块中所有包含 <code>acquire()</code> 和 <code>release()</code> 的对象，如：<code>Lock()</code>, <code>RLock()</code>, <code>Condition()</code>, <code>Semaphore()</code> 都可以用上下文管理器 <code>with</code> 语句来操作。</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rlock = threading.RLock()</span><br><span class="line">with rlock:</span><br><span class="line">    with rlock:</span><br><span class="line">        ...</span><br></pre></td></tr></table></figure></p>
+<hr>
+<blockquote>
+<p>A reentrant lock is a synchronization primitive that may be acquired multipart times by the same thread.</p>
+</blockquote>
+<blockquote>
+<p>可重入锁可以被同一个线程多次获取。可重入锁有 “owning thread” 的概念，即当一个线程获取到可重入锁的时候，这把锁是属于这个线程的。</p>
+</blockquote>
+<blockquote>
+<p>当一个线程获取到可重入锁的时候，再次 <code>acquire</code> 可重入锁会立即成功返回。</p>
+</blockquote>
+<blockquote>
+<p>可重入锁的 <code>acquire</code> 和 <code>release</code> 都必须要在同一个线程中，即一个线程 <code>acquire</code> 了多少次可重入锁，就必须 <code>release</code> 多少次。</p>
+</blockquote>
+<blockquote>
+<p>Python 的 <code>RLock()</code> 其实就是在 <code>Lock()</code> 上做了一层封装，在 <code>RLock()</code> 对象里面添加了一个 <code>__owner</code> 和 <code>__count</code> 分别用来记录可重入锁的所属者和 <code>acquire</code> 层数。</p>
+</blockquote>
+<h2 id="threading-RLock"><a href="#threading-RLock" class="headerlink" title="threading.RLock()"></a>threading.RLock()</h2><blockquote>
+<p>用于生成可重入锁的工厂方法。</p>
+</blockquote>
+<ul>
+<li><p><strong>acquire(blocking=True, timeout=-1)</strong> <br><br>同 <code>threading.Lock.acquire()</code></p>
+</li>
+<li><p><strong>release()</strong> <br><br>减少可重入锁的递归 <code>acquire</code> 层数，当对应最后一个 <code>acquire</code> 时，释放可重入锁 (即把锁设置为 <code>unlocked</code> 状态)，没有返回值。</p>
+</li>
+</ul>
+<p>线程对可重入锁是有一个拥有概念的，线程的每个 <code>acquire</code> 都必须在同一个线程 <code>release</code>。</p>
+<p>当 <code>release</code> 一把 <code>unlocked</code> 状态的锁的时候会引起 <code>release unlocked lock</code> 错误。</p>
+<p><code>threading.RLock</code> 使用例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class test(object):</span><br><span class="line">    def __init__(self):</span><br><span class="line">        self.val = []</span><br><span class="line">        self.rlock = threading.RLock()</span><br><span class="line"></span><br><span class="line">    def func(self):</span><br><span class="line">        self.rlock.acquire()</span><br><span class="line">        self.val.append(1)</span><br><span class="line">        self.rlock.release()</span><br><span class="line"></span><br><span class="line">    def run(self):</span><br><span class="line">        self.rlock.acquire()</span><br><span class="line">        self.func()</span><br><span class="line">        self.rlock.release()</span><br><span class="line"></span><br><span class="line">    def main(self):</span><br><span class="line">        thread_list = [threading.Thread(target=self.func) for _ in range(5)]</span><br><span class="line">        map(lambda t: t.start(), thread_list)</span><br><span class="line">        map(lambda t: t.join(), thread_list)</span><br></pre></td></tr></table></figure></p>
+<p>线程使用了可重入锁来保证列表的线性安全，如果将 <code>func()</code> 和 <code>run()</code> 里面的 <code>RLock()</code> 换成 <code>Lock()</code> 就会造成线程死锁。</p>
+<h2 id="threading-Event"><a href="#threading-Event" class="headerlink" title="threading.Event()"></a>threading.Event()</h2><blockquote>
+<p>线程间事件管理器。实际上就是线程之间的一个共享标记变量，线程可以任意改变这个变量的值(<code>True/False</code>)，其它线程根据变量的值等待或做其它事情。</p>
+</blockquote>
+<ul>
+<li><p><strong>is_set()</strong> <br><br>如果标志为<code>True</code>，则返回<code>True</code>。</p>
+</li>
+<li><p><strong>set()</strong> <br><br>设置标志为<code>True</code>。</p>
+</li>
+<li><p><strong>clear()</strong> <br><br>设置标志为<code>False</code>。</p>
+</li>
+<li><p><strong>wait(timeout=None)</strong> <br><br>阻塞，直到标志为<code>True</code>，或者超时<code>timeout</code>。默认<code>timeout=None</code>，表示会一直阻塞。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">import time</span><br><span class="line">import threading</span><br><span class="line"></span><br><span class="line">def thread_run(n, event):</span><br><span class="line">    while True:</span><br><span class="line">        print(n)</span><br><span class="line">        n -= 1</span><br><span class="line">        time.sleep(1)</span><br><span class="line">        if n &lt;= 0:</span><br><span class="line">            break</span><br><span class="line">    # finish, set the flag to True</span><br><span class="line">    event.set()</span><br><span class="line"></span><br><span class="line">event = threading.Event()</span><br><span class="line">thread = threading.Thread(target=thread_run, args=(10, event))</span><br><span class="line">thread.daemon = True</span><br><span class="line">thread.start()</span><br><span class="line">event.wait(timeout=5)  # the main process will wait and block 5 seconds</span><br><span class="line">print(&apos;hello&apos;)  # after 5 seconds</span><br></pre></td></tr></table></figure>
+</div><div class="tags"><a href="/tags/python/">python</a></div><div class="post-nav"><a href="/2017/07/01/python/multiprocessing/" class="pre">Python - multiprocessing</a><a href="/2017/05/12/python/webbrowser/" class="next">Python - webbrowser</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="www.lizs.cc"><meta name="keywords" content="lizs, www.lizs.cc, lizs.cc"><title>Ubuntu deploy OpenVPN - lizs</title><!-- link(rel="stylesheet", type="text/css", href="//fonts.neworld.org/css?family=Source+Code+Pro")--><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><!-- #header--><div id="layout" class="layout-g"><div class="layout-r"><div id="sidebar"><div class="site-name"><h1 class="title"><a href="/." class="home">lizs</a></h1><!-- h1.hidden= current_title--><!-- a#logo(href=url_for('.'))= config.title--><p class="description">www.lizs.cc</p></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="www.lizs.cc"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="time">{date}</div><div class="title">{title}</div><!-- .tags {tags}--></a></div></template></div></div><!-- .search-pla--><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenVPN-Server"><span class="toc-text">OpenVPN Server</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-OpenVPN"><span class="toc-text">安装 OpenVPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenVPN-PKI"><span class="toc-text">OpenVPN PKI</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、CA-设置，生成证书和密钥"><span class="toc-text">1、CA 设置，生成证书和密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、服务器端证书和密钥，迪菲·赫尔曼密钥"><span class="toc-text">2、服务器端证书和密钥，迪菲·赫尔曼密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、客户端证书和密钥"><span class="toc-text">3、客户端证书和密钥</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#服务器配置"><span class="toc-text">服务器配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OpenVPN-Client"><span class="toc-text">OpenVPN Client</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-OpenVPN-1"><span class="toc-text">安装 OpenVPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#客户端配置"><span class="toc-text">客户端配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附-windows-openvpn-client"><span class="toc-text">附 windows openvpn client</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 近期文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/python/abstract_base_classes/">Python - Abstract Base Classes</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_upgrade_python2.6/">CentOS6.6 upgrade Python2.6 to Python2.7</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_deploy_php_mysql_nginx/">CentOS6.6 install PHP, MySQL and Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/linux/cmd_netstat/">Linux command - netstat</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/python/http_server/">Python - HTTP Server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/linux/cmd_tcpdump/">Linux command - tcpdump</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova/">Cordova</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP/IP</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/shell/" style="font-size: 15px;">shell</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a> <a href="/tags/cordova/" style="font-size: 15px;">cordova</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/others/" style="font-size: 15px;">others</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/django/" style="font-size: 15px;">django</a> <a href="/tags/tcp-ip/" style="font-size: 15px;">tcp/ip</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li></ul></div><div id="nav-menu"></div></div></div><div class="layout-l"><div class="content_container"><div class="post"><div class="header"><h1 class="post-title">Ubuntu deploy OpenVPN</h1><div class="post-meta"><p><span class="date">2016-07-14</span><span><a href="/categories/Linux/" class="category">Linux</a></span><span class="view_count"><i id="busuanzi_container_page_pv"><!-- i=  __('hits') + '数: '--><i id="busuanzi_value_page_pv"></i></i></span></p></div></div><div class="post-content"><p>参照 <a href="https://help.ubuntu.com/lts/serverguide/openvpn.html" target="_blank" rel="noopener">OpenVPN文档</a></p>
+<blockquote>
+<p>大概流程：</p>
+<ul>
+<li>安装 OpenVPN</li>
+<li>生成 PKI：CA 证书和密钥、服务器端证书和密钥、客户端证书和密钥、迪菲·赫尔曼密钥</li>
+<li>服务器端配置</li>
+<li>客户端配置</li>
+</ul>
+</blockquote>
+<h2 id="OpenVPN-Server"><a href="#OpenVPN-Server" class="headerlink" title="OpenVPN Server"></a>OpenVPN Server</h2><h3 id="安装-OpenVPN"><a href="#安装-OpenVPN" class="headerlink" title="安装 OpenVPN"></a>安装 OpenVPN</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install openvpn easy-rsa</span><br></pre></td></tr></table></figure>
+<h3 id="OpenVPN-PKI"><a href="#OpenVPN-PKI" class="headerlink" title="OpenVPN PKI"></a>OpenVPN PKI</h3><p>构建 OpenVPN 配置的第一步是建立一个公钥基础设施（PKI）。PKI 包括：</p>
+<ul>
+<li>一个主证书颁发机构（CA）的证书（即公钥）和密钥，用于签名服务器和客户端的证书（English：a master Certificate Authority (CA) certificate and key which is used to sign each of the server and client certificates.）</li>
+<li>OpenVPN Server 证书（公钥）和密钥</li>
+<li>OpenVPN Client 证书（公钥）和密钥</li>
+</ul>
+<h4 id="1、CA-设置，生成证书和密钥"><a href="#1、CA-设置，生成证书和密钥" class="headerlink" title="1、CA 设置，生成证书和密钥"></a>1、CA 设置，生成证书和密钥</h4><ul>
+<li><p>用安装的 <code>easy-rsa</code> 包来制作 CA/服务器端/客户端的证书和密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r /usr/share/easy-rsa/ /etc/openvpn/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置默认的基本参数： <code>/etc/openvpn/easy-rsa/vars</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">export KEY_COUNTRY=&quot;CN&quot;</span><br><span class="line">export KEY_PROVINCE=&quot;GuangDong&quot;</span><br><span class="line">export KEY_CITY=&quot;FoShan&quot;</span><br><span class="line">export KEY_ORG=&quot;easecloud&quot;    # organization 组织</span><br><span class="line">export KEY_EMAIL=&quot;*@easecloud.cn&quot;</span><br><span class="line">export KEY_OU=&quot;easecloud&quot; # organization unit 单位</span><br><span class="line">export KEY_NAME=&quot;easecloudVPN&quot;</span><br><span class="line">export KEY_CN=&quot;ecVPN&quot; # common name for all keys 常用名</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成 CA 证书和密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source vars</span><br><span class="line">./clean-all</span><br><span class="line">./build-ca    # 生成 CA 证书和密钥</span><br></pre></td></tr></table></figure>
+<p>执行 <code>./build-ca</code>时，可以一直回车，默认使用 vars 的设置。执行完之后，就会生成 CA 证书（<code>keys/ca.crt</code>）和密钥（<code>keys/ca.key</code>）。</p>
+</li>
+</ul>
+<blockquote>
+<p><strong> 运行 <code>./build-ca</code> 时可能报错：</strong></p>
+</blockquote>
+<p><strong>错误一:</strong><br>error on line 198 of /etc/openvpn/easy-rsa/openssl-1.0.0.cnf<br>139749463725728:error:0E065068:configuration file routines:STR_COPY:variable has no value:conf_def.c:618:line 198</p>
+<p><strong>错误二:</strong><br>error on line 220 of /etc/openvpn/easy-rsa/openssl-1.0.0.cnf<br>140566456841888:error:0E065068:configuration file routines:STR_COPY:variable has no value:conf_def.c:618:line 220</p>
+<p><strong>解决：</strong><br>分别注释到 openssl-1.0.0.cnf 文件中 198 和 220 行的内容 subjectAltName=$ENV::KEY_ALTNAMES</p>
+<h4 id="2、服务器端证书和密钥，迪菲·赫尔曼密钥"><a href="#2、服务器端证书和密钥，迪菲·赫尔曼密钥" class="headerlink" title="2、服务器端证书和密钥，迪菲·赫尔曼密钥"></a>2、服务器端证书和密钥，迪菲·赫尔曼密钥</h4><ul>
+<li><p>生成服务器端的证书和密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./build-key-server myservername</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>myservername</code>：服务器证书名称，如：easecloudVPN</li>
+<li>执行：一直回车，直到 <code>Sign the certificate?[y/n]y</code>，<code>1 out of 1 certificate requests certified, commit? [y/n]y</code></li>
+<li>执行完之后，我们就可以得到服务器证书（keys/easecloudVPN.crt）和密钥（keys/easecloudVPN.key）。</li>
+</ul>
+</li>
+<li><p>同时，为 OpenVPN 服务器生成迪菲·赫尔曼密钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./build-dh</span><br></pre></td></tr></table></figure>
+<p>执行完 <code>./build-dh</code> 之后，会根据 /easy-ras/vars 的 <code>KEY_SIZE</code> 参数来生成相应的 Diffie Hellman 参数文件（keys/dh-2048.pem）</p>
+</li>
+</ul>
+<blockquote>
+<p>迪菲·赫尔曼密钥交换（Diffie–Hellman key exchange，简称“D–H”） 是一种安全协议。它可以让双方在完全没有对方任何预先信息的条件下通过不安全信道创建起一个密钥。这个密钥可以在后续的通讯中作为对称密钥来加密通讯内容。</p>
+</blockquote>
+<h4 id="3、客户端证书和密钥"><a href="#3、客户端证书和密钥" class="headerlink" title="3、客户端证书和密钥"></a>3、客户端证书和密钥</h4><p>生成客户端证书。一般，不同的客户端各自创建自己的客户端证书和密钥。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/openvpn/easy-rsa/</span><br><span class="line">./build-key clientName</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><code>clientName</code>：客户端证书名称，如：lizs</li>
+<li>执行：一直回车，直到 <code>Sign the certificate?[y/n]y</code>，<code>1 out of 1 certificate requests certified, commit? [y/n]y</code></li>
+<li>执行完之后，我们就可以得到客户端证书（keys/lizs.crt）和密钥（keys/lizs.key）</li>
+<li>先将以下证书拷贝到 OpenVPN Client 所在环境，等下配置客户端 OpenVPN 要用到<ul>
+<li>ca.crt</li>
+<li>lizs.crt</li>
+<li>lizs.key</li>
+</ul>
+</li>
+</ul>
+<h3 id="服务器配置"><a href="#服务器配置" class="headerlink" title="服务器配置"></a>服务器配置</h3><ul>
+<li><p>先将生成的相关证书复制到 <code>/etc/openvpn/</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd keys/</span><br><span class="line">cp easecloudVPN.crt easecloudVPN.key ca.crt dh2048.pem /etc/openvpn/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装了 OpenVPN 之后会自动带有一些服务器端和客户端的简单配置的例子。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls -l /usr/share/doc/openvpn/examples/sample-config-files/</span><br><span class="line">-rw-r--r-- 1 root root 3427 Dec  2  2014 client.conf    # 客户端配置</span><br><span class="line">-rw-r--r-- 1 root root 4141 Dec  2  2014 server.conf.gz    # 服务器端配置</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>服务器端配置，我们可以使用例子中的配置 <code>server.conf.gz</code>，将它复制到 <code>/etc/openvpn/</code> 目录下解压就可以使用了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz /etc/openvpn/</span><br><span class="line">gunzip /etc/openvpn/server.conf.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接下来，编辑 <code>server.conf</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ca ca.crt    # 刚生成的 CA 证书</span><br><span class="line">cert easecloudVPN.crt    # 刚生成的服务器端证书</span><br><span class="line">key easecloudVPN.key    # 刚生成的服务器端密钥</span><br><span class="line">dh dh2048.pem    # 刚生成的 Diffie Hellman 参数文件</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑 sysctl 配置文件 <code>/etc/sysctl.conf</code> 并且重新加载</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#net.ipv4.ip_forward=1    # default</span><br><span class="line">net.ipv4.ip_forward=1    # we just need to uncomment it</span><br></pre></td></tr></table></figure>
+<p>重新加载 sysctl</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sysctl -p /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启服务器端 OpenVPN</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service openvpn start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查 OpenVPN 是否创建了一个 <code>tun0</code> 接口（可以查看 server.conf 配置文件中的 <code>dev</code> 参数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ ifconfig tun0</span><br><span class="line">tun0      Link encap:UNSPEC  HWaddr 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00</span><br><span class="line">          inet addr:10.8.0.1  P-t-P:10.8.0.2  Mask:255.255.255.255</span><br><span class="line">          UP POINTOPOINT RUNNING NOARP MULTICAST  MTU:1500  Metric:1</span><br><span class="line">          RX packets:0 errors:0 dropped:0 overruns:0 frame:0</span><br><span class="line">          TX packets:0 errors:0 dropped:0 overruns:0 carrier:0</span><br><span class="line">          collisions:0 txqueuelen:100</span><br><span class="line">          RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="OpenVPN-Client"><a href="#OpenVPN-Client" class="headerlink" title="OpenVPN Client"></a>OpenVPN Client</h2><h3 id="安装-OpenVPN-1"><a href="#安装-OpenVPN-1" class="headerlink" title="安装 OpenVPN"></a>安装 OpenVPN</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openvpn</span><br></pre></td></tr></table></figure>
+<h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><ul>
+<li><p>先将服务器端生成的相关证书文件复制到 <code>/etc/openvpn/</code> 目录下</p>
+<ul>
+<li><code>ca.crt</code>：CA 证书</li>
+<li><code>lizs.crt</code>：客户端证书</li>
+<li><code>lizs.key</code>：客户端密钥</li>
+</ul>
+</li>
+<li><p>客户端配置也可以使用 OpenVPN 自带的客户端配置例子 <code>client.conf</code>，将其复制到 <code>/etc/openvpn</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf /etc/openvpn/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑客户端配置文件 <code>/etc/openvpn/client.conf</code>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">remote 123.123.123.123 1194</span><br><span class="line">ca ca.crt    # 服务器端生成的 CA 证书</span><br><span class="line">cert lizs.crt    # 客户端证书</span><br><span class="line">key lizs.key    # 客户端密钥</span><br></pre></td></tr></table></figure>
+<p>其中<code>123.123.123.123</code>为 OpenVPN Server 所在服务器的 IP 或域名。</p>
+</li>
+<li><p>开启 OpenVPN Client</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service openvpn@client start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查 OpenVPN 是否创建了一个 <code>tun0</code> 接口（可以查看 server.conf 配置文件中的 <code>dev</code> 参数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig tun0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果没有成功开启，重启服务器端的 OpenVPN 和 客户端的 OpenVPN 试试看。</p>
+<hr>
+<h2 id="附-windows-openvpn-client"><a href="#附-windows-openvpn-client" class="headerlink" title="附 windows openvpn client"></a>附 windows openvpn client</h2><ul>
+<li>安装 OpenVPN GUI</li>
+<li><p>首先，将服务器生成的相关证书复制到安装目录的 <code>config</code> 文件夹下面。</p>
+<ul>
+<li><code>ca.crt</code>：CA 证书</li>
+<li><code>lizs.crt</code>：客户端证书</li>
+<li><code>lizs.key</code>：客户端密钥</li>
+</ul>
+</li>
+<li><p>修改配置文件。同样，使用自带的配置例子 <code>sample-config/client.ovpn</code>。将其复制到 <code>config</code> 目录下，然后编辑：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dev tun    # 和服务器的保持一致</span><br><span class="line">remote 123.123.123.123 1194</span><br><span class="line">ca ca.crt    # 服务器端生成的 CA 证书</span><br><span class="line">cert lizs.crt    # 客户端证书</span><br><span class="line">key lizs.key    # 客户端密钥</span><br></pre></td></tr></table></figure>
+<p>其中<code>123.123.123.123</code>为 OpenVPN Server 所在服务器的 IP 或域名。</p>
+</li>
+<li><p>最后以管理员身份运行 OpenVPN。启动之后，右键菜单栏 OpenVPN 图标，<code>connect</code>。</p>
+</li>
+</ul>
+</div><div class="tags"><a href="/tags/linux/">linux</a></div><div class="post-nav"><a href="/2016/08/21/mysql/character_set/" class="pre">MySQL 字符集与校对规则</a><a href="/2016/06/02/python/class/" class="next">Python - Class</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="www.lizs.cc"><meta name="keywords" content="lizs, www.lizs.cc, lizs.cc"><title>Python - Socket - lizs</title><!-- link(rel="stylesheet", type="text/css", href="//fonts.neworld.org/css?family=Source+Code+Pro")--><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><!-- #header--><div id="layout" class="layout-g"><div class="layout-r"><div id="sidebar"><div class="site-name"><h1 class="title"><a href="/." class="home">lizs</a></h1><!-- h1.hidden= current_title--><!-- a#logo(href=url_for('.'))= config.title--><p class="description">www.lizs.cc</p></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="www.lizs.cc"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="time">{date}</div><div class="title">{title}</div><!-- .tags {tags}--></a></div></template></div></div><!-- .search-pla--><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建-socket-对象"><span class="toc-text">创建 socket 对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#socket-socket-family-AF-INET-type-SOCK-STREAM-proto-0-fileno-None"><span class="toc-text">socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#socket-create-connection"><span class="toc-text">socket.create_connection()</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket-对象的常用方法"><span class="toc-text">socket 对象的常用方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket-模块的其它函数"><span class="toc-text">socket 模块的其它函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于-socket-的-TCP-编程"><span class="toc-text">基于 socket 的 TCP 编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UDP"><span class="toc-text">UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#socket-发送-HTTP-HTTPS-请求"><span class="toc-text">socket 发送 HTTP/HTTPS 请求</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 近期文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/python/abstract_base_classes/">Python - Abstract Base Classes</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_upgrade_python2.6/">CentOS6.6 upgrade Python2.6 to Python2.7</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_deploy_php_mysql_nginx/">CentOS6.6 install PHP, MySQL and Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/linux/cmd_netstat/">Linux command - netstat</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/python/http_server/">Python - HTTP Server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/linux/cmd_tcpdump/">Linux command - tcpdump</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova/">Cordova</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP/IP</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/shell/" style="font-size: 15px;">shell</a> <a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a> <a href="/tags/cordova/" style="font-size: 15px;">cordova</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/others/" style="font-size: 15px;">others</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/django/" style="font-size: 15px;">django</a> <a href="/tags/tcp-ip/" style="font-size: 15px;">tcp/ip</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li></ul></div><div id="nav-menu"></div></div></div><div class="layout-l"><div class="content_container"><div class="post"><div class="header"><h1 class="post-title">Python - Socket</h1><div class="post-meta"><p><span class="date">2018-01-01</span><span><a href="/categories/Python/" class="category">Python</a></span><span class="view_count"><i id="busuanzi_container_page_pv"><!-- i=  __('hits') + '数: '--><i id="busuanzi_value_page_pv"></i></i></span></p></div></div><div class="post-content"><blockquote>
+<p><a href="https://docs.python.org/4/library/socket.html" target="_blank" rel="noopener">Socket Reference</a></p>
+</blockquote>
+<h3 id="创建-socket-对象"><a href="#创建-socket-对象" class="headerlink" title="创建 socket 对象"></a>创建 socket 对象</h3><h4 id="socket-socket-family-AF-INET-type-SOCK-STREAM-proto-0-fileno-None"><a href="#socket-socket-family-AF-INET-type-SOCK-STREAM-proto-0-fileno-None" class="headerlink" title="socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)"></a>socket.socket(family=AF_INET, type=SOCK_STREAM, proto=0, fileno=None)</h4><p><code>socket.socket()</code> 函数将根据指定的参数创建一个 socket 对象。</p>
+<ul>
+<li><code>family</code>: 协议族，协议族决定了 socket 连接的地址类型。<ul>
+<li><code>AF_INET</code>: IPv4, <code>(host, port)</code>. <code>host</code>, a string (e.g. ‘alizs.cc’, ‘127.0.0.1’); <code>port</code>, an integer.</li>
+<li><code>AF_INET6</code>: IPv6, <code>(host, port, flowinfo, scopeid)</code>.</li>
+<li><code>AF_UNIX</code>: 用于单一的 Unix 系统的进程间通信，连接地址为绝对路径。数据传输不需要经过网络，发送的数据经过内核缓冲区后，内核根据路径将数据发送到接收方的内核缓冲区。所以，数据传输的速率远远大于 <code>AF_INET</code>、<code>AF_INET6</code>，而且因为不需要经过网卡，数据传输也不受网卡带宽的限制。</li>
+</ul>
+</li>
+<li><p><code>type</code>: Socket 类型。</p>
+<ul>
+<li><code>SOCK_STREAM</code>：流式 Socket，使用 TCP 传输协议，用于提供面向连接、可靠的数据传输服务。传输数据能够实现无差错、无重复发送，并按顺序接收。</li>
+<li><code>SOCK_DGRAM</code>：数据包 Socket，使用 UDP 传输协议，用于提供无连接的数据传输服务。传输数据不具备可靠性，数据有可能在传输工程中丢失或出现重复发送数据，并且无法保证顺序地接收数据。</li>
+<li><p><code>SOCK_RAM</code>：原始 Socket，允许对较低层次的协议直接访问。如：IP、ICMP 等。</p>
+<blockquote>
+<p><code>SOCK_STREAM</code> 只能读取 TCP 协议的数据包，<code>SOCK_DGRAM</code> 只能读取 UDP 协议的数据包，要访问其它协议的数据包可以用 <code>SOCK_RAM</code>。</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><code>proto</code>：协议类型，可以指定使用的协议。<code>0</code>，表示默认协议。<code>SOCK_STREAM</code> =&gt; <code>IPPROTO_TCP</code>, <code>SOCK_DGRAM</code> =&gt; <code>IPPROTO_UDP</code>。 当 <code>type=SOCK_RAM</code> 时，<code>proto</code> 不能为空，即不能够用默认值<code>0</code>。</p>
+</li>
+<li><code>fileno</code>：python3 新增，如果指定 <code>fileno</code>，其它参数将没有意义，因为 socket 对象将由该 <code>fileno</code> 创建。</li>
+</ul>
+<h4 id="socket-create-connection"><a href="#socket-create-connection" class="headerlink" title="socket.create_connection()"></a>socket.create_connection()</h4><hr>
+<h3 id="socket-对象的常用方法"><a href="#socket-对象的常用方法" class="headerlink" title="socket 对象的常用方法"></a>socket 对象的常用方法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sock = socket.socket()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>Python3.2: Support for the context manager <code>with socket.socket() as sock:</code></strong></p>
+</blockquote>
+<p>Socket objects(<code>sock</code>) have the following methods：</p>
+<ul>
+<li><p><strong>sock.bind(address)</strong>：将 Socket 绑定到指定的地址。</p>
+<ul>
+<li><code>address</code>，绑定的地址，格式取决于<code>family</code>。如：<code>AF_INET</code> =&gt; <code>(&#39;127.0.0.1&#39;, 8080)</code>。</li>
+</ul>
+</li>
+<li><p><strong>sock.listen(backlog)</strong>：Socket 服务器开始监听客户端的连接请求。</p>
+<ul>
+<li><p><code>backlog</code>，表示服务器在 <code>accept</code> 连接请求之前可以挂起的最大连接数。数值必须大于 0，小于 0 将自动设为 0。</p>
+<blockquote>
+<p><strong>Python3.5: backlog 为可选参数。</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p><strong>sock.accept()</strong>：Socket 服务器接收一个客户端的连接请求，socket 必须要先绑定地址，并且在监听状态。<code>accept()</code> 方法会一直阻塞，直到接收到一个连接请求。返回返回值是一个二元组 <code>(conn, address)</code>。</p>
+<ul>
+<li><code>conn</code>：一个新的 Socket 对象，可以用来在该连接上发送或接收数据。</li>
+<li><code>address</code>：客户端的地址。地址格式取决于 <code>family</code>，e.g. <code>AF_INET</code> =&gt; <code>(&#39;127.0.0.1&#39;, 35423)</code>.</li>
+</ul>
+</li>
+<li><p><strong>sock.connect(address)</strong>：连接到Socket，<code>address</code> 格式取决于 <code>family</code>。连接失败会引起报错。</p>
+</li>
+<li><p><strong>sock.connect_ex(address)</strong>：Like <code>sock.connect(address)</code>，但是一般连接失败不会引起报错，会返回一个状态码，<code>0</code> 表示成功。但是，像 <code>Name or server not know</code>(<code>address=(&#39;127.0.0.999&#39;, 8080)</code>) 这些还是会引起报错的。</p>
+</li>
+<li><p><strong>sock.send(bytes[, flags])</strong>：建立 socket 连接之后，发送数据到 socket。返回发送的字节数。</p>
+<ul>
+<li><code>bytes</code>：发送的数据。注意：Python2，为<code>str</code>类型；Python3，为 <code>bytes</code> 类型。</li>
+<li><code>flags</code>：<code>man recv</code>.</li>
+</ul>
+<blockquote>
+<p>用 <code>send()</code> 发送数据到 socket，不一定一次就发送完毕，所以，发送完一次之后要比较发送的字节数和总共要发送数据的字节数，判断是否需要进行再次发送剩余的数据。</p>
+</blockquote>
+</li>
+<li><p><strong>sock.sendall(bytes[, flags])</strong>：建立 socket 连接之后，发送数据到 socket。不同 <code>send()</code>，<code>sendall()</code> 会一直发送数据，直到数据发送完毕，或者引起报错。成功发送完毕之后，会返回<code>None</code>。如果引起报错是不能够确定已经发送了多少数据的。</p>
+</li>
+<li><p><strong>sock.sendto(bytes, address)</strong>：发送数据到 <code>sock</code> 没有连接的地址。成功返回发送发送的字节数。地址的格式取决于 <code>family</code>。</p>
+<blockquote>
+<p>（当 <code>family=AF_UNIX</code> 的时候，<code>sendto()</code> 使用出现 <code>socket.error: [Errno 95] Operation not supported</code> 的错误？）</p>
+</blockquote>
+</li>
+<li><p><strong>sock.recv(bufsize[, flags])</strong>：接收 Socket 发送过来的数据，作为返回值。<code>recv()</code> 方法会一直阻塞，直到接收到数据。</p>
+<ul>
+<li><code>bufsize</code>：<strong>一次</strong>接收数据的最大字节数</li>
+<li><code>flags</code>：<code>man recv</code></li>
+</ul>
+</li>
+<li><p><strong>sock.recvfrom(bufsize[, flags])</strong>：接收 Socket 发送过来的数据，返回值为 <code>(bytes, address)</code>。<code>bytes</code>，接收的数据；<code>address</code>，发送数据过来的Socket地址。<code>bufsize</code>, <code>flags</code> 参数同 <code>recv()</code>。<code>recvfrom()</code> 方法也会一直阻塞，直到接收到数据。</p>
+</li>
+<li><p><strong>sock.recv_into(buffer[, nbytes[, flags]])</strong>：接收 Socket 发送的数据到 <code>buffer</code>，并返回实际接收到数据的字节数。</p>
+<ul>
+<li><code>buffer</code>：接收到的 Socket 数据的保存地方。</li>
+<li><code>nbytes</code>：一次接收 Socket 数据的最大字节数。</li>
+<li><code>falgs</code>：同 <code>recv()</code>，<code>man recv</code></li>
+</ul>
+</li>
+<li><p><strong>sock.recvfrom_into(buffer[, nbytes[, flags]])</strong>：接收 Socket 发送的数据到 <code>buffer</code>，不过返回值是 <code>(nbytes, address)</code>。<code>nbytes</code>，实际接收到数据的字节数；<code>address</code>，发送端的地址。</p>
+</li>
+<li><p><strong>sock.close()</strong>：关闭本进程与 Socket 的连接，并不是关闭 Socket。比如：当多个进程同时操作一个 Socket 的时候，调用 <code>close()</code> 只是断开了当前进程与 Socket 的连接，其它进程与该 Socket 的连接是不会收到影响的。当所有的连接都 <code>close()</code> 了的时候，该 Socket 才算关闭。</p>
+</li>
+<li><p><strong>sock.shutdown(how)</strong>：可以直接关闭关闭 Socket，也可以只关闭 Socket 的读或写功能。如：多个进程同时操作一个 Socket 的时候，其中一个进程调用了 <code>shutdown()</code>，其它进程也会受影响。<code>how</code> 参数：</p>
+<ul>
+<li><code>SHUT_RD</code>：关闭 Socket 的读功能，Socket 将不能够接收数据：<code>recv()</code>, <code>recvfrom()</code> …</li>
+<li><code>SHUT_WR</code>：关闭 Socket 的写功能，Socket 将不能够发送数据：<code>send()</code>, <code>sendto()</code> …</li>
+<li><code>SHUT_RDWR</code>：关闭 Socket 的读写。</li>
+</ul>
+</li>
+<li><p><strong>sock.fileno()</strong>：返回 Socket 的文件描述符。失败返回 <code>-1</code>。</p>
+</li>
+<li><p><strong>sock.getsockname()</strong>：返回 Socket 绑定的地址。地址格式取决于 <code>family</code>，如：<code>AF_INET</code> =&gt; <code>(&#39;127.0.0.1&#39;, 8080)</code>。</p>
+</li>
+<li><p><strong>sock.getpeername()</strong>：返回连接到 Socket 的客户端的地址。地址格式也是取决于 <code>family</code>。某些系统不支持该方法。</p>
+</li>
+<li><p><strong>sock.gettimeout()</strong>：返回 Socket 操作的超时时间。如果没有设置超时时间，则返回 <code>None</code>。</p>
+</li>
+<li><strong>sock.settimeout(value)</strong>：设置 Socket 操作的超时时间。<code>value</code>的值：<ul>
+<li><code>None</code>：阻塞模式。</li>
+<li><code>0</code>：非阻塞模式。</li>
+<li>非零：Socket 操作的阻塞时间。</li>
+</ul>
+</li>
+<li><p><strong>sock.setblocking(flag)</strong>：设置 Socket 的模式：阻塞/非阻塞。</p>
+<ul>
+<li><code>True</code>：阻塞模式。<code>sock.setblocking(True)</code> 等于 <code>sock.settimeout(None)</code>。</li>
+<li><code>False</code>：非阻塞模式。<code>sock.setblocking(False)</code> 等于 <code>sock.settimeout(0)</code>。</li>
+</ul>
+</li>
+<li><p><strong>sock.getsockopt(level, optname[, buflen])</strong>: 获取 socket 实例属性</p>
+</li>
+<li><strong>sock.setsockopt(level, optname, value)</strong>: 设置 socket 实例属性</li>
+</ul>
+<hr>
+<h3 id="socket-模块的其它函数"><a href="#socket-模块的其它函数" class="headerlink" title="socket 模块的其它函数"></a>socket 模块的其它函数</h3><ul>
+<li><p><strong>socket.create_connection(address[, timeout[, source_address]])</strong><br>连接到地址为(<code>address</code>)的 TCP 服务器,并返回 socket 对象. <code>address</code> TCP服务器地址,为二元组<code>(host, port)</code>.</p>
+</li>
+<li><p><strong>socket.gethostbyname(host)</strong><br>返回 <code>host</code> 的 IP 地址。</p>
+</li>
+<li><p><strong>socket.getaddrinfo(host, port, family=0, type=0, proto=0, flags=0)</strong><br>获取地址<code>(host, port)</code>的相关信息,返回一个列表,列表中每个元素都是一个五元组 <code>(family, type, proto, canonname, socketaddr)</code>,这些信息包含了创建 socket 连接所需的信息.<br>其实,你可以理解这是一次DNS解析请求, socket 每次创建连接之前,都调用这个函数去获取地址的相关信息.<br>所以,在爬虫的时候,因为要请求的URL数量很大,你可以通过打补丁把DNS解析缓存下来.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import socket</span><br><span class="line"></span><br><span class="line">dns_cache = dict()</span><br><span class="line"></span><br><span class="line">def _getaddrinfo(*args, **kwargs):</span><br><span class="line">    if args in dns_cache:</span><br><span class="line">        return dns_cache[args]</span><br><span class="line">    info = socket._getaddrinfo(*args, **kwargs)</span><br><span class="line">    dns_cache[args] = info</span><br><span class="line">    return info</span><br><span class="line"></span><br><span class="line">socket.getaddrinfo, socket._getaddrinfo = _getaddrinfo, socket.getaddrinfo</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="基于-socket-的-TCP-编程"><a href="#基于-socket-的-TCP-编程" class="headerlink" title="基于 socket 的 TCP 编程"></a>基于 socket 的 TCP 编程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import socket</span><br><span class="line"></span><br><span class="line"># server</span><br><span class="line">def server():</span><br><span class="line">    host = &apos;127.0.0.1&apos;</span><br><span class="line">    port = 8080</span><br><span class="line">    sock = socket.socket()</span><br><span class="line">    # Python &gt;= 3.2, support context manager: with socket.socket as sock</span><br><span class="line">    sock.bind((host, port))</span><br><span class="line">    sock.listen(5)</span><br><span class="line">    conn, address = sock.accept()</span><br><span class="line">    while True:</span><br><span class="line">        data = conn.recv(1024)</span><br><span class="line">        if data:</span><br><span class="line">            print(&apos;Data receive from client: %s&apos; % data)</span><br><span class="line">            conn.sendall(&apos;Server receive data succefull!&apos;)</span><br><span class="line"></span><br><span class="line">def client():</span><br><span class="line">    host = &apos;127.0.0.1&apos;</span><br><span class="line">    port = 8080</span><br><span class="line">    sock = socket.socket()</span><br><span class="line">    sock.connect((host, port))</span><br><span class="line">    while True:</span><br><span class="line">        data = input(&apos;Please input data that send to server: &apos;)</span><br><span class="line">        sock.sendall(str(data))</span><br><span class="line">        msg = sock.recv(1024)</span><br><span class="line">        if msg:</span><br><span class="line">            print(&apos;Message from server: %s&apos; % data)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>TCP 需要先经过三次握手建立连接 <code>accept</code> 才能够通信。</p>
+<ul>
+<li>客户端由 <code>connect()</code> 发起连接请求，向服务器发送 SYN (i)，然后 <code>connect()</code> 阻塞；</li>
+<li>当服务器收到 SYN 包，向客户端回应 SYN (j) 和 ACK (i+1)；</li>
+<li>客户端收到 SYN 和 ACK 之后，确认之后，<code>connect()</code> 从阻塞状态返回，并向服务器发送 ACK (j+1)。</li>
+<li>服务器收到 ACK (j+1) 之后，确认之后，<code>accept()</code> 建立一个新的 socket 连接服务端。</li>
+</ul>
+<blockquote>
+<p>TCP 三次握手过程中，服务器的 <code>listen()</code> 会将未完成和已完成(收到确认ACK)的握手过程分别保存到未完成和已完成的队列里，已完成队列的个数可以由 <code>listen(backlog)</code> 的 <code>backlog</code> 参数指定。<code>accept()</code> 就不断从已完成队列中获取完成握手的连接创建新的 socket 来进行通信。</p>
+</blockquote>
+</li>
+<li><p>该 <code>server</code> 只能够同时接收进行一个连接请求，如果想要 server 同时接收多个连接请求，可以用多线程分发接收连接的新 socket <code>conn</code>，或用多路复用 <code>select</code>、<code>poll</code>、<code>epoll</code> 来实现。</p>
+</li>
+<li><code>accept()</code> 方法会阻塞当前进程，直到接收到一个连接请求，然后返回新的 socket <code>conn</code> 和客户端地址 <code>address</code></li>
+<li><code>recv()</code> 方法会阻塞当前进程，直到接收到数据才执行下去。</li>
+<li>注意：Python3 发送的数据要转换为 bytes；接收到的数据也是 bytes 类型。</li>
+</ul>
+<h3 id="UDP"><a href="#UDP" class="headerlink" title="UDP"></a>UDP</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import socket</span><br><span class="line"></span><br><span class="line">def server():</span><br><span class="line">    host = &apos;127.0.0.1&apos;</span><br><span class="line">    port = 8080</span><br><span class="line">    sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)</span><br><span class="line">    sock.bind((host, port))</span><br><span class="line">    while True:</span><br><span class="line">        data, address = sock.recvfrom(1024)</span><br><span class="line">        print(&apos;Data from client: %s&apos; % data)</span><br><span class="line">        sock.sendto(&apos;This is a message from server&apos;, address)</span><br><span class="line"></span><br><span class="line">def client():</span><br><span class="line">    host = &apos;127.0.0.1&apos;</span><br><span class="line">    port = 8080</span><br><span class="line">    sock = socket.socket(family=socket.AF_INET, type=socket.SOCK_DGRAM)</span><br><span class="line">    while True:</span><br><span class="line">        msg = input(&apos;Please input data that send to server: &apos;)</span><br><span class="line">        sock.sendto(str(msg), (host, port))</span><br><span class="line">        data, address = sock.recvfrom(1024)</span><br><span class="line">        print(data)</span><br><span class="line">        print(address)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>UDP 通信不需要建立连接</li>
+<li><code>recvfrom()</code> 方法会一直阻塞到接收数据为止。</li>
+</ul>
+<h3 id="socket-发送-HTTP-HTTPS-请求"><a href="#socket-发送-HTTP-HTTPS-请求" class="headerlink" title="socket 发送 HTTP/HTTPS 请求"></a>socket 发送 HTTP/HTTPS 请求</h3><p>URL：<a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import socket</span><br><span class="line"></span><br><span class="line">sock = socket.socket()</span><br><span class="line">sock.connect((&apos;www.baidu.com&apos;, 80))</span><br><span class="line">data = &quot;GET / HTTP/1.1\n&quot; \</span><br><span class="line">       &quot;Accept: */*\n&quot; \</span><br><span class="line">       &quot;Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh\n&quot; \</span><br><span class="line">       &quot;User-Agent: Mozilla/5.0 (X11; Linux x86_64) &quot; \</span><br><span class="line">       &quot;AppleWebKit/537.36 (KHTML, like Gecko) &quot; \</span><br><span class="line">       &quot;Chrome/58.0.3029.110 Safari/537.36\n&quot; \</span><br><span class="line">       &quot;Host: www.baidu.com\n\n&quot;</span><br><span class="line">sock.sendall(data)</span><br><span class="line">response = sock.recv(1024)</span><br></pre></td></tr></table></figure></p>
+<p>URL：<a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import socket</span><br><span class="line">import ssl</span><br><span class="line"></span><br><span class="line">sock = ssl.wrap_socket(socket.socket())</span><br><span class="line">sock.connect((&apos;www.baidu.com&apos;, 443))</span><br><span class="line">data = &quot;GET / HTTP/1.1\n&quot; \</span><br><span class="line">       &quot;Accept: */*\n&quot; \</span><br><span class="line">       &quot;Accept-Language: en-US,en;q=0.8,zh-CN;q=0.6,zh\n&quot; \</span><br><span class="line">       &quot;User-Agent: Mozilla/5.0 (X11; Linux x86_64) &quot; \</span><br><span class="line">       &quot;AppleWebKit/537.36 (KHTML, like Gecko) &quot; \</span><br><span class="line">       &quot;Chrome/58.0.3029.110 Safari/537.36\n&quot; \</span><br><span class="line">       &quot;Host: www.baidu.com\n\n&quot;</span><br><span class="line">sock.sendall(data)</span><br><span class="line">response = sock.recv(1024)</span><br></pre></td></tr></table></figure></p>
+</div><div class="tags"><a href="/tags/python/">python</a></div><div class="post-nav"><a href="/2018/01/02/python/socket_server/" class="pre">Python - Socket Server</a><a href="/2018/01/01/tcp/3-handshake_and_4-waves/" class="next">TCP/IP - TCP 三次握手连接和四次握手关闭</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>
