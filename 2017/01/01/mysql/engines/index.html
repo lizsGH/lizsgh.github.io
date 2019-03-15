@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="www.lizs.cc"><meta name="keywords" content="lizs, www.lizs.cc, lizs.cc"><title>MySQL - Engines - lizs</title><!-- link(rel="stylesheet", type="text/css", href="//fonts.neworld.org/css?family=Source+Code+Pro")--><link rel="stylesheet" type="text/css" href="/css/style.css?v=2.0.1"><link rel="stylesheet" type="text/css" href="/css/highlight.css?v=2.0.1"><link rel="Shortcut Icon" href="/favicon.ico"><link rel="bookmark" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><!-- #header--><div id="layout" class="layout-g"><div class="layout-r"><div id="sidebar"><div class="site-name"><h1 class="title"><a href="/." class="home">lizs</a></h1><!-- h1.hidden= current_title--><!-- a#logo(href=url_for('.'))= config.title--><p class="description">www.lizs.cc</p></div><div id="search-form"><div id="result-mask" class="hide"></div><label><input id="search-key" type="text" autocomplete="off" placeholder="www.lizs.cc"></label><div id="result-wrap" class="hide"><div id="search-result"></div></div><div class="hide"><template id="search-tpl"><div class="item"><a href="/{path}" title="{title}"><div class="time">{date}</div><div class="title">{title}</div><!-- .tags {tags}--></a></div></template></div></div><!-- .search-pla--><div id="toc" class="widget"><div class="widget-title"><i class="fa fa-fei">文章目录</i></div><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MyISAM"><span class="toc-text">MyISAM</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#InnoDB"><span class="toc-text">InnoDB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MyISAM-与-InnoDB-比较"><span class="toc-text">MyISAM 与 InnoDB 比较</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MEMORY"><span class="toc-text">MEMORY</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ARCHIVE"><span class="toc-text">ARCHIVE</span></a></li></ol></div><div class="widget"><div class="widget-title"><i class="fa fa-xie"> 近期文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/05/01/python/abstract_base_classes/">Python - Abstract Base Classes</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_upgrade_python2.6/">CentOS6.6 upgrade Python2.6 to Python2.7</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/03/05/linux/centos6.6_deploy_php_mysql_nginx/">CentOS6.6 install PHP, MySQL and Nginx</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/05/linux/cmd_netstat/">Linux command - netstat</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/03/python/http_server/">Python - HTTP Server</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/01/02/python/socket_server/">Python - Socket Server</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-gui"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Algorithm/">Algorithm</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Cordova/">Cordova</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Docker/">Docker</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Git/">Git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/HTTP/">HTTP</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/MySQL/">MySQL</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Nginx/">Nginx</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Others/">Others</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/PHP/">PHP</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a><span class="category-list-count">26</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/TCP-IP/">TCP/IP</a><span class="category-list-count">1</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-biao"> 标签</i></div><div class="tagcloud"><a href="/tags/algorithm/" style="font-size: 15px;">algorithm</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/cmd/" style="font-size: 15px;">cmd</a> <a href="/tags/mysql/" style="font-size: 15px;">mysql</a> <a href="/tags/tutorial/" style="font-size: 15px;">tutorial</a> <a href="/tags/cordova/" style="font-size: 15px;">cordova</a> <a href="/tags/python/" style="font-size: 15px;">python</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/docker/" style="font-size: 15px;">docker</a> <a href="/tags/http/" style="font-size: 15px;">http</a> <a href="/tags/nginx/" style="font-size: 15px;">nginx</a> <a href="/tags/shell/" style="font-size: 15px;">shell</a> <a href="/tags/others/" style="font-size: 15px;">others</a> <a href="/tags/php/" style="font-size: 15px;">php</a> <a href="/tags/tcp-ip/" style="font-size: 15px;">tcp/ip</a> <a href="/tags/django/" style="font-size: 15px;">django</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-archive"> 归档</i></div><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">十二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">十一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">八月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">七月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">六月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">五月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">四月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">三月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">二月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">九月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">六月 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">四月 2015</a></li></ul></div><div id="nav-menu"></div></div></div><div class="layout-l"><div class="content_container"><div class="post"><div class="header"><h1 class="post-title">MySQL - Engines</h1><div class="post-meta"><p><span class="date">2017-01-01</span><span><a href="/categories/MySQL/" class="category">MySQL</a></span><span class="view_count"><i id="busuanzi_container_page_pv"><!-- i=  __('hits') + '数: '--><i id="busuanzi_value_page_pv"></i></i></span></p></div></div><div class="post-content"><h1 id="MyISAM"><a href="#MyISAM" class="headerlink" title="MyISAM"></a>MyISAM</h1><p>MySQL 5.5.5 以前的版本，使用 MyISAM 作为默认存储引擎。MyISAM 提供高速存储和检索，以及全文搜索的能力。</p>
+<p>每个 MyISAM 表在磁盘上存储成三个文件，文件名和表明相同，扩展名如下：</p>
+<ul>
+<li><code>.frm</code>：存储表定义</li>
+<li><code>.MYD</code>：存储数据 (MYData)</li>
+<li><code>.MYI</code>：存储索引 (MYIndex)<br>数据文件(.MYD)和索引文件(.MYI)可以放置在不同目录，平均分配 IO，获取更快的速度。自定义数据文件和索引文件的路径，可以在创建表的时候使用<code>DATA DIRECTORY</code>和<code>INDEX DIRECTORY</code>语句来指定，文件路径需要使用绝对路径。</li>
+</ul>
+<p>MyISAM 表支持三种不同的存储格式：</p>
+<ul>
+<li><p>静态表<br>静态表为默认的存储格式。静态表中的字段都是非变长字段，即每个记录都是固定长度的，因为静态表在存储的时候会根据列定义的宽度自动填补空格。但在访问的时候并不会得到这些空格，在返回数据之前会经这些空格处理掉。但要注意，在某些情况下可能需要返回字段后的空格，使用这种格式时后面的空格会被自动处理掉。<br>静态表的优点是存储非常迅速，容易缓存，出现故障容易恢复；缺点是占用空间通常比动态表多。</p>
+</li>
+<li><p>动态表<br>动态表包含变长字段，这样存储的优点是占用空间少，但频繁的更新删除记录会产生空间碎片，需要定期执行<code>OPTIMIZE TABLE</code>或<code>myisamchk -r</code>来改善性能。而且动态表出现故障的时候恢复相对比较困难。</p>
+</li>
+<li><p>压缩表<br>压缩表由 myisamchk 工具创建，占用非常小的空间，因为每条记录都是被单独压缩的，所以只有非常小的访问开支。</p>
+</li>
+</ul>
+<h1 id="InnoDB"><a href="#InnoDB" class="headerlink" title="InnoDB"></a>InnoDB</h1><p>从 MySQL 5.5.5 开始, 使用 InnoDB 作为默认存储引擎。具有 ACID 特性：</p>
+<ul>
+<li><strong>A</strong>: atomicity 原子性<br>事务是一个原子操作单元，其对数据的修改，要么全都执行，要么都不执行。如果事务执行到一半出现错误，数据库就会回滚到事务开始执行的状态。</li>
+<li><strong>C</strong>: consistency 一致性<br>在事务开始和结束后，数据库的完整性约束没有被破坏。如，A 向 B 转账，A 扣钱成功，则 B 必然收款成功。</li>
+<li><strong>I</strong>: isolation 隔离性<br>同一时间，只允许一个事务请求同一数据，不同事务之间彼此没有任何干扰。</li>
+<li><strong>D</strong>: durability 持久性<br>事务完成之后，它对数据的修改是永久性的，即使出现系统故障也能够保持。</li>
+</ul>
+<h2 id="MyISAM-与-InnoDB-比较"><a href="#MyISAM-与-InnoDB-比较" class="headerlink" title="MyISAM 与 InnoDB 比较"></a>MyISAM 与 InnoDB 比较</h2><ul>
+<li><p><strong>CURD 操作</strong></p>
+<ul>
+<li>如果表更新不频繁，以查询为主，则执行<code>SELECT</code>查询，MyISAM 速度更快。</li>
+<li>如果表修改频繁，处于性能考虑，应该使用 InnoDB。</li>
+<li>清空整张表的数据时 (<code>DELETE FROM table_name</code>)，InnoDB 是一行一行的删除，效率非常慢。所以，清空 InnoDB 表最好使用<code>TRUNCATE table</code>。</li>
+</ul>
+</li>
+<li><p><strong>事务支持</strong></p>
+<ul>
+<li>MyISAM 不支持事务；InnoDB 支持事务，外键等。具有事务的提交 (commit)、回滚 (rollback) 和故障修复 (crash recovery) 的特性。</li>
+<li>而且 InnoDB 的 AUTOCOMMIT 是默认开启的，即每条 SQL 语句会默认被封装成一个事务，自动提交。所以，允许的情况下，尽量将多条 SQL 语句放在 <code>BEGIN TRANSACTION</code> 和 <code>COMMIT</code> 之间，组成一个事务提交，这样可以减小数据库多次提交导致的开销。</li>
+</ul>
+</li>
+<li><p><strong>存储结构</strong></p>
+<ul>
+<li><strong>MyISAM</strong>：每个 MyISAM 表在磁盘上存储成三个文件 (.frm，存储表定义；.MYD，存储表数据；.MYI，存储表索引)</li>
+<li><strong>InnoDB</strong>：所有表都保存在同一个数据文件中 (也可能是多个文件，或者是独立的表空间文件)，InnoDB 表的大小只受限于操作系统文件的大小，一般为 2GB。</li>
+</ul>
+</li>
+<li><p><strong>存储空间</strong></p>
+<ul>
+<li><strong>MyISAM</strong>：支持三种不同的存储格式 (静态表、动态表和压缩表)，所以 MyISAM 存储空间可以更小。</li>
+<li><strong>InnoDB</strong>：需要更多的内存和存储，它会在主内存中建立其专用的缓存池用于高速缓冲数据和索引。</li>
+</ul>
+</li>
+<li><p><strong>锁差异</strong></p>
+<ul>
+<li>MySQL 表级锁有两种：表共享锁 (Table Read Lock) 和表独占写锁 (Table Write Lock)。</li>
+<li><strong>MyISAM</strong>：只支持表级锁，用户在操作 MyISAM 表时，<code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>INSERT</code>语句都会给表自动加锁。MyISAM 表的读操作 (表共享锁) 不会阻塞其它线程对该表的读操作，但会阻塞对该表的写操作；MyISAM 表的读和写操作之间，以及写和写操作之间是串行的。即当一个线程对一个表加写锁 (表独占写锁) 后，其它线程的读和写操作都会阻塞，直到这个线程释放写锁。</li>
+<li>MyISAM 表的写锁优先级比读锁高，即使读请求比写请求先到锁等待队列，写锁也会插到读请求之前。所以，MyISAM 引擎不太适合有大量更新操作和查询操作的表，大量的更新操作会造成查询操作很难获得读锁，从而大大影响查询操作。</li>
+<li><strong>InnoDB</strong>：支持行级锁，行锁大幅度提升了多用户并发操作的性能。</li>
+</ul>
+</li>
+<li><p><strong>主键</strong></p>
+<ul>
+<li><strong>MyISAM</strong>：MyISAM 表允许没有任何索引和主键，而且索引都是保存行的地址。</li>
+<li><strong>InnoDB</strong>：如果没有设定主键或非空唯一索引，会自动生成一个 6 字节的主键，数据是主索引的一部分，附加索引保存的是主索引的值。</li>
+</ul>
+</li>
+<li><p><strong>表的行数</strong></p>
+<ul>
+<li><strong>MyISAM</strong>：保存有表的总行数，<code>SELECT COUNT(*) FROM table_name;</code> 会直接取出该值。</li>
+<li><strong>InnoDB</strong>：没有保存表的总行数，<code>SELECT COUNT(*) FROM table_name;</code> 会遍历整张表。</li>
+<li>因为 MyISAM 保存的是整张表的总行数，所以当添加条件查询表行数的时候，MyISAM 和 InnoDB 查询处理方式都一样 <code>SELECT COUNT(*) FROM table_name WHERE ...</code>。</li>
+</ul>
+</li>
+</ul>
+<h1 id="MEMORY"><a href="#MEMORY" class="headerlink" title="MEMORY"></a>MEMORY</h1><p>MEMORY 存储引擎，直接将数据保存到内存中，所以速度非常快。但是，MEMORY 表只能使用不变长度的字段，所以<code>BLOG</code>和<code>TEXT</code>不能够使用。<code>VARCHAR</code>是一种可变的类型，但因为它在 MySQL 内部当做长度固定不变的<code>CHAR</code>类型，所以可以使用。</p>
+<p>MEMORY 引擎使用场景：</p>
+<ul>
+<li>因为存储在内存，所以表数据量不能太大</li>
+<li>内存中保存的数据不具备持久性，而且稳定性不高，所以数据容易丢失所造成的影响不大的情况</li>
+</ul>
+<p>MEMORY 引擎支持 HASH 索引和 B-tree 索引。</p>
+<h1 id="ARCHIVE"><a href="#ARCHIVE" class="headerlink" title="ARCHIVE"></a>ARCHIVE</h1><p>ARCHIVE 引擎仅仅支持基本的插入和查询，MySQL 5.5 之后，开始支持索引功能。ARCHIVE 拥有很好的压缩机制，使用 zlib 压缩库，在记录被请求是会实时压缩，所以经常被用来当做仓库使用。</p>
+</div><div class="tags"><a href="/tags/mysql/">mysql</a></div><div class="post-nav"><a href="/2017/01/01/mysql/indexes/" class="pre">MySQL - Index</a><a href="/2017/01/01/docker/installation/" class="next">Docker - Install Docker (CE) for Ubuntu</a></div></div><!-- include _partial/footer--></div></div></div><a id="totop" href="#top"></a></div><script src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js" async></script><script type="text/javascript" src="/js/search.json.js?v=2.0.1"></script><script type="text/javascript" src="/js/toctotop.js?v=2.0.1" async></script></body></html>
