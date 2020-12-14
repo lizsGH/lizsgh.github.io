@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://lizsgh.github.io/2020/12/01/others/jetbrains_activate/</loc>
+    <lastmod>2020-12-14T08:38:53.755Z</lastmod>
+    <data>
+        <display>
+        <title>JetBrains 系列产品激活</title>
+        <pubTime>2020-11-30T16:00:00.000Z</pubTime>
+        
+        <tag>others</tag>
+         
+         
+           
+             
+              <breadCrumb title="Others" url="https://lizsgh.github.io/categories/Others/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://lizsgh.github.io/2017/01/01/mysql/optimization/</loc>
     <lastmod>2019-03-16T11:11:41.433Z</lastmod>
     <data>
@@ -535,9 +555,9 @@
         <title>CentOS6.6 upgrade Python2.6 to Python2.7</title>
         <pubTime>2018-03-04T16:00:00.000Z</pubTime>
         
-        <tag>linux</tag>
-         
         <tag>python</tag>
+         
+        <tag>linux</tag>
          
          
            
@@ -1431,9 +1451,9 @@
         <title>Python - Tuple</title>
         <pubTime>2016-08-31T16:00:00.000Z</pubTime>
         
-        <tag>tutorial</tag>
-         
         <tag>python</tag>
+         
+        <tag>tutorial</tag>
          
          
            
@@ -1453,9 +1473,9 @@
         <title>Python - Set</title>
         <pubTime>2016-08-31T16:00:00.000Z</pubTime>
         
-        <tag>tutorial</tag>
-         
         <tag>python</tag>
+         
+        <tag>tutorial</tag>
          
          
            
@@ -1495,9 +1515,9 @@
         <title>Python - List</title>
         <pubTime>2016-08-31T16:00:00.000Z</pubTime>
         
-        <tag>tutorial</tag>
-         
         <tag>python</tag>
+         
+        <tag>tutorial</tag>
          
          
            
@@ -1517,9 +1537,9 @@
         <title>Python - String</title>
         <pubTime>2016-08-31T16:00:00.000Z</pubTime>
         
-        <tag>tutorial</tag>
-         
         <tag>python</tag>
+         
+        <tag>tutorial</tag>
          
          
            
@@ -1539,9 +1559,9 @@
         <title>Python - Dictionary</title>
         <pubTime>2016-08-31T16:00:00.000Z</pubTime>
         
-        <tag>tutorial</tag>
-         
         <tag>python</tag>
+         
+        <tag>tutorial</tag>
          
          
            
@@ -1581,9 +1601,9 @@
         <title>Data model</title>
         <pubTime>2016-09-30T16:00:00.000Z</pubTime>
         
-        <tag>tutorial</tag>
-         
         <tag>python</tag>
+         
+        <tag>tutorial</tag>
          
          
            
@@ -1623,9 +1643,9 @@
         <title>Python - Built-in functions</title>
         <pubTime>2016-12-31T16:00:00.000Z</pubTime>
         
-        <tag>tutorial</tag>
-         
         <tag>python</tag>
+         
+        <tag>tutorial</tag>
          
          
            
